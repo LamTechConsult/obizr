@@ -1,0 +1,37 @@
+<ion-view view-title="Log In">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear button-icon" ng-click="skipAuthorization()">Skip</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="padding login">
+    <div class="card" ng-if="serverErrors.length">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+
+    <div class="row responsive-sm text-center">
+      <div class="col">
+        <form name="loginForm" ng-submit="doLogin(loginForm)" novalidate>
+          <div class="list material">
+            <label class="item item-input item-floating-label">
+              <input type="text" ng-model="user.username" placeholder="Username" autocapitalize="off" required>
+            </label>
+            <label class="item item-input item-floating-label">
+              <input type="password" ng-model="user.password" placeholder="Password" required>
+            </label>
+          </div>
+		  <p class="padding-bottom"><a href="#/forget-password">Forgot your password?</a></p>
+		  <button class="button-img" on-tap="doLogin(loginForm)"><img src="assets/img/login_round.png" alt="Login" /></button>
+        </form>
+        <!--<p class="dot-divider"><span>OR</span></p>
+        <a class="button button-block button-calm" href='#/fblogin'>SIGN WITH FACEBOOK</a>-->
+        <!--<a class="button button-block button-calm" href='#/twitterlogin'>SIGN WITH TWITTER</a>-->
+        <!--<a class="button button-block button-calm" href='#/googlelogin'>SIGN WITH GOOGLE</a>-->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

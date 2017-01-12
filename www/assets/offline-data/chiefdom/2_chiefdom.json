@@ -1,0 +1,73 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Dea",
+			"id": "3"
+		}
+	}, {
+		"location": {
+			"name": "Njaluahun",
+			"id": "4"
+		}
+	}, {
+		"location": {
+			"name": "Jawei",
+			"id": "5"
+		}
+	}, {
+		"location": {
+			"name": "Kissi Kama",
+			"id": "6"
+		}
+	}, {
+		"location": {
+			"name": "Kissi Teng",
+			"id": "7"
+		}
+	}, {
+		"location": {
+			"name": "Kissi Tongi",
+			"id": "8"
+		}
+	}, {
+		"location": {
+			"name": "Luawa",
+			"id": "9"
+		}
+	}, {
+		"location": {
+			"name": "Malema",
+			"id": "10"
+		}
+	}, {
+		"location": {
+			"name": "Mandu",
+			"id": "11"
+		}
+	}, {
+		"location": {
+			"name": "Peje Bongre",
+			"id": "12"
+		}
+	}, {
+		"location": {
+			"name": "Peje West",
+			"id": "13"
+		}
+	}, {
+		"location": {
+			"name": "Penguia",
+			"id": "14"
+		}
+	}, {
+		"location": {
+			"name": "Upper Bambara",
+			"id": "15"
+		}
+	}, {
+		"location": {
+			"name": "Yawei",
+			"id": "16"
+		}
+	}]
+}

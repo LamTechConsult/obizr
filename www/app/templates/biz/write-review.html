@@ -1,0 +1,29 @@
+<ion-view view-title="Post Review">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left"> </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear" ng-click="saveWriteReview()">Save</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content>
+    <rating ng-model="rating.rate" max="rating.max" class="text-center {{rating.rate | ratingClass}} padding-t2x"></rating>
+
+    <div class="card" ng-if="serverErrors.length">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Subject: The best steak house in town" ng-model="writeReviewData.subject">
+      </label>
+      <label class="item item-input">
+        <textarea rows="5" placeholder="Review: XYZ Steakhouse is fun, different, and apparently (I am told) authentically Sierra Leonean. For SLL 80,000, there's a buffet of salads, cheeses, vegetables, etc. to start, and then--when you're ready for the meat--you flip a round tag green-side-up and servers start coming to your table with spits of roasted meats:" ng-model="writeReviewData.comment_body.und[0].value"></textarea>
+      </label>
+    </div>
+    <button class="button button-full shadow-none icon icon-top ion-ios-camera" ng-click="takePicture()">Add Photos</button>
+    <img ng-src="data:image/jpeg;base64,{{pictureURL}}">
+  </ion-content>
+</ion-view>

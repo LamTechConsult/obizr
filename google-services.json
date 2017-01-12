@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "248768222626",
+    "firebase_url": "https://obizr-9c77c.firebaseio.com",
+    "project_id": "obizr-9c77c",
+    "storage_bucket": "obizr-9c77c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248768222626:android:ba040f3fc1b26d06",
+        "android_client_info": {
+          "package_name": "io.obizr.obizrsl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248768222626-li9nd6l1pi34e5ni960loiq1mkoojtar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHoH6xwzu2kiqdvHZOvpjb-0gNB_1a2IE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

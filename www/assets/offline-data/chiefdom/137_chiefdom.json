@@ -1,0 +1,73 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Bagruwa",
+			"id": "138"
+		}
+	}, {
+		"location": {
+			"name": "Banta",
+			"id": "139"
+		}
+	}, {
+		"location": {
+			"name": "Bumpe",
+			"id": "140"
+		}
+	}, {
+		"location": {
+			"name": "Dasse",
+			"id": "141"
+		}
+	}, {
+		"location": {
+			"name": "Fakunya",
+			"id": "142"
+		}
+	}, {
+		"location": {
+			"name": "Kagboro",
+			"id": "143"
+		}
+	}, {
+		"location": {
+			"name": "Kaiyamba",
+			"id": "144"
+		}
+	}, {
+		"location": {
+			"name": "Kamajei",
+			"id": "145"
+		}
+	}, {
+		"location": {
+			"name": "Kongbora",
+			"id": "146"
+		}
+	}, {
+		"location": {
+			"name": "Kori",
+			"id": "147"
+		}
+	}, {
+		"location": {
+			"name": "Kowa",
+			"id": "148"
+		}
+	}, {
+		"location": {
+			"name": "Ribbi",
+			"id": "149"
+		}
+	}, {
+		"location": {
+			"name": "Timdale",
+			"id": "150"
+		}
+	}, {
+		"location": {
+			"name": "Upper Banta",
+			"id": "151"
+		}
+	}]
+}

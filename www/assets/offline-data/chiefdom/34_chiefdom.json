@@ -1,0 +1,73 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Fiama",
+			"id": "35"
+		}
+	}, {
+		"location": {
+			"name": "Gbane Kandor",
+			"id": "36"
+		}
+	}, {
+		"location": {
+			"name": "Gbane",
+			"id": "37"
+		}
+	}, {
+		"location": {
+			"name": "Gbense",
+			"id": "38"
+		}
+	}, {
+		"location": {
+			"name": "Gorama Kono",
+			"id": "39"
+		}
+	}, {
+		"location": {
+			"name": "Kamara",
+			"id": "40"
+		}
+	}, {
+		"location": {
+			"name": "Lei",
+			"id": "41"
+		}
+	}, {
+		"location": {
+			"name": "Mafindor",
+			"id": "42"
+		}
+	}, {
+		"location": {
+			"name": "Nimikoro",
+			"id": "43"
+		}
+	}, {
+		"location": {
+			"name": "Nimiyama",
+			"id": "44"
+		}
+	}, {
+		"location": {
+			"name": "Sandor",
+			"id": "45"
+		}
+	}, {
+		"location": {
+			"name": "Soa",
+			"id": "46"
+		}
+	}, {
+		"location": {
+			"name": "Tankoro",
+			"id": "47"
+		}
+	}, {
+		"location": {
+			"name": "Toli",
+			"id": "48"
+		}
+	}]
+}

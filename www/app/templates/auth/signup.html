@@ -1,0 +1,46 @@
+<ion-view view-title="Sign Up">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear button-icon" ng-click="skipAuthorization()">Skip</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="padding signup">
+    <div class="card" ng-if="serverErrors.length">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+
+    <div class="row responsive-sm text-center">
+      <div class="col">
+        <form name="signupForm" ng-submit="doSignup(signupForm)" novalidate>
+          <div class="list material">
+            <label class="item item-input">
+              <input name="name" type="text" ng-model="user.name" placeholder="Username" ng-focus="scrollDown()" autocapitalize="off" required>
+            </label>
+            <label class="item item-input">
+              <input name="pass" type="password" ng-model="user.pass" ng-minlength="6" placeholder="Password" required>
+            </label>
+            <label class="item item-input item-no-border">
+              <input name="nickname"  type="text" ng-model="user.field_user_nick_name.und[0].value" placeholder="Nick Name" ng-focus="scrollDown()" autocapitalize="off" >
+            </label>
+            <label class="item item-input item-no-border">
+              <input name="email"  type="email" ng-model="user.mail" placeholder="Email" ng-focus="scrollDown()" autocapitalize="off" required>
+            </label>
+            <label class="item item-input item-no-border">
+              <input name="phone"  type="number" ng-model="user.field_mobile_user_telephone.und[0].value" placeholder="Phone Number" ng-minlength="10" ng-focus="scrollDown()" required >
+            </label>
+          </div>
+    	  <button class="button-img" on-tap="doSignup(signupForm)"><img src="assets/img/signup_round.png" alt="Sign Up" /></button>
+        </form>
+        <!--<p class="dot-divider"><span>OR</span></p>
+        <a class="button button-block button-calm" href='#/fblogin'>SIGN WITH FACEBOOK</a>-->
+        <!--<a class="button button-block button-calm" href='#/twitterlogin'>SIGN WITH TWITTER</a>-->
+        <!--<a class="button button-block button-calm" href='#/googlelogin'>SIGN WITH GOOGLE</a>-->
+        <div class="legal">By signing up, you agree to the OBizR <a href="#/term-of-use">Term of use</a> and <a href="#/privacy-policy">Privacy Policy</a></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

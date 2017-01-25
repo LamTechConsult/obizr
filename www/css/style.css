@@ -17,3 +17,7 @@
 .staticpage .item{
  color:#666 ! important;   
 }
+
+.no-internet{
+    background: #d10 !important;
+}

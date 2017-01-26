@@ -131,6 +131,11 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
         })
  
    }, false);
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        console.log("navigator.geolocation works well");
+    }
   
 });
 

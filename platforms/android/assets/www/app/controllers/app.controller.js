@@ -107,7 +107,7 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
     $rootScope.currentLocation = $localStorage.currentLocation;
   }
 
-    document.addEventListener("deviceready", function () {
+  document.addEventListener("deviceready", function () {
  
         $scope.network = $cordovaNetwork.getNetwork();
         $scope.isOnline = $cordovaNetwork.isOnline();

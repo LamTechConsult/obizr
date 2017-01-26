@@ -15,6 +15,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
         }
     },
     "dependent_plugins": {}

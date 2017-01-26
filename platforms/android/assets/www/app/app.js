@@ -21,35 +21,23 @@ OBizR.run(function($ionicPlatform, $rootScope, $cordovaStatusbar, $ionicHistory,
       //$cordovaStatusbar.overlaysWebView(true);
       StatusBar.styleDefault();
     }
-  });
-
-  function checkConnection() {
-    try{
-        var networkState = navigator.connection && navigator.connection.type;
-
-        setTimeout(function(){
-            networkState = navigator.connection && navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.NONE]     = 'No network connection';
-
-            alert('Connection type: ' + states[networkState]);
-        }, 500);
-    }catch(e){
-        alert(e);
-        $.each(navigator, function(key, value){
-            alert(key+' => '+value);
+    
+    // Check for network connection
+    if (window.Connection) {
+      console.log(window.connection);
+      if( !(navigator.connection.type == Connection.NONE)) {
+        $ionicPopup.confirm({
+          title: 'No Internet Connection',
+          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+        })
+        .then(function(result) {
+          if(!result) {
+            ionic.Platform.exitApp();
+          }
         });
+      }
     }
-}
-
-checkConnection();
+  });
 
   $ionicPlatform.registerBackButtonAction(function() {
 

@@ -26,7 +26,6 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   }
   $scope.doSaveFilterFieldValue = function () {
     $ionicHistory.goBack();
-
   }
   $scope.initializeFilterData = function () {
     if($rootScope.filter == undefined){
@@ -115,7 +114,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
       if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
         $scope.doSortBiz();
       }else{
-        $scope.doFiler('nonDefault');
+        $scope.doFilter('nonDefault');
       }
     }
     if($stateParams.srchId == 'filterFromSearchRes'){
@@ -123,11 +122,11 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
       if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
         $scope.doSortBiz();
       }else{
-        $scope.doFiler('default');
+        $scope.doFilter('default');
       }
     }
   });
-  $scope.doFiler = function (type) {
+  $scope.doFilter = function (type) {
     if(type == 'nonDefault'){
       $rootScope.searchedBusinesses = $rootScope.displayBusinesses;
       console.log('nonDefault');
@@ -141,7 +140,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
       businessesService.filterBusinesses()
       .then(function (biz) {
           $rootScope.searchedBusinesses = biz.nodes;
-          $scope.doFiler('default');
+          $scope.doFilter('default');
           console.log($rootScope.searchedBusinesses)
           $rootScope.filter = undefined;
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});

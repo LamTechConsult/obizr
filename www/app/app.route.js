@@ -573,17 +573,8 @@ OBizR.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork,
     //we need this to have out current auth state before any other thing in router happens
     function locationChangeStartCallback(e) {
       
-      $rootScope.isOffline = $window.navigator.onLine;
-      $window.addEventListener("online", function () {
-        $rootScope.isOffline = true;
-        $rootScope.$digest();
-      }, true);
-
-      $window.addEventListener("offline", function () {
-          $rootScope.isOffline = false;
-          $rootScope.$digest();
-      }, true);
-
+      $rootScope.isOffline = ! $window.navigator.onLine;
+    
       if(!$rootScope.isOffline){
         return;
       }

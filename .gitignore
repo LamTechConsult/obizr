@@ -7,3 +7,4 @@ bower_components/
 node_modules/
 scss/__MACOSX/
 **/build
+**/.gradle

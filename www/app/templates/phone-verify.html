@@ -1,5 +1,5 @@
 <ion-view view-title="Phone Number Verification">
-  <ion-nav-bar class="bar-positive">
+  <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
     <ion-nav-buttons side="right">
       <button class="button button-clear button-icon" ng-click="skipMobileVerification()">Skip</button>
     </ion-nav-buttons>

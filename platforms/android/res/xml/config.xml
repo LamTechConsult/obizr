@@ -10,6 +10,10 @@
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
     <name>OBizR</name>
     <description>
     OBizR Sierra Leone - location-based business reviews and travel guide application. Use OBizR to quickly find top rated businesses nearby and write reviews about them. OBizR is your local guide to finding the best places to eat, shop, drink, sleep, relax and play
@@ -57,8 +61,4 @@
     <preference name="StatusBarBackgroundColor" value="#1E6FF5" />
     <preference name="orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
-    <feature name="Keyboard">
-        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>

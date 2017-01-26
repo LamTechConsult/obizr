@@ -1,5 +1,5 @@
 
-OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService) {
+OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService,$cordovaNetwork) {
   $rootScope.ProvienceItem = [];
   $rootScope.DistrictItem = [];
   $rootScope.ChiefdomItem = [];
@@ -106,6 +106,31 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
   }else{
     $rootScope.currentLocation = $localStorage.currentLocation;
   }
+
+    document.addEventListener("deviceready", function () {
+ 
+        $scope.network = $cordovaNetwork.getNetwork();
+        $scope.isOnline = $cordovaNetwork.isOnline();
+        $scope.$apply();
+        
+        // listen for Online event
+        $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
+            $scope.isOnline = true;
+            $scope.network = $cordovaNetwork.getNetwork();
+            
+            $scope.$apply();
+        })
+ 
+        // listen for Offline event
+        $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
+            console.log("got offline");
+            $scope.isOnline = false;
+            $scope.network = $cordovaNetwork.getNetwork();
+            
+            $scope.$apply();
+        })
+ 
+  }, false);
 });
 
 OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {

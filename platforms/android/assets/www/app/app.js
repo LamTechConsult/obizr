@@ -21,22 +21,6 @@ OBizR.run(function($ionicPlatform, $rootScope, $cordovaStatusbar, $ionicHistory,
       //$cordovaStatusbar.overlaysWebView(true);
       StatusBar.styleDefault();
     }
-    
-    // Check for network connection
-    if (window.Connection) {
-      console.log(window.connection);
-      if( !(navigator.connection.type == Connection.NONE)) {
-        $ionicPopup.confirm({
-          title: 'No Internet Connection',
-          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
-        })
-        .then(function(result) {
-          if(!result) {
-            ionic.Platform.exitApp();
-          }
-        });
-      }
-    }
   });
 
   $ionicPlatform.registerBackButtonAction(function() {

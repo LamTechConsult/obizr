@@ -1,0 +1,78 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Badjia",
+			"id": "110"
+		}
+	}, {
+		"location": {
+			"name": "Bagbo",
+			"id": "111"
+		}
+	}, {
+		"location": {
+			"name": "Bagbwe",
+			"id": "112"
+		}
+	}, {
+		"location": {
+			"name": "Baoma",
+			"id": "113"
+		}
+	}, {
+		"location": {
+			"name": "Bumpe Gao",
+			"id": "114"
+		}
+	}, {
+		"location": {
+			"name": "Gbo",
+			"id": "115"
+		}
+	}, {
+		"location": {
+			"name": "Jaiama Bongor",
+			"id": "116"
+		}
+	}, {
+		"location": {
+			"name": "Kakua",
+			"id": "117"
+		}
+	}, {
+		"location": {
+			"name": "Komboya",
+			"id": "118"
+		}
+	}, {
+		"location": {
+			"name": "Lugbu",
+			"id": "119"
+		}
+	}, {
+		"location": {
+			"name": "Niawa Lenga",
+			"id": "120"
+		}
+	}, {
+		"location": {
+			"name": "Selenga",
+			"id": "121"
+		}
+	}, {
+		"location": {
+			"name": "Tikonko",
+			"id": "122"
+		}
+	}, {
+		"location": {
+			"name": "Valunia",
+			"id": "123"
+		}
+	}, {
+		"location": {
+			"name": "Wonde",
+			"id": "124"
+		}
+	}]
+}

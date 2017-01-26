@@ -1,0 +1,22 @@
+<ion-view view-title="My Friends">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+    <!-- <ion-nav-buttons side="right">
+      <button class="button button-icon ion-more" ng-click="editProfile()"></button>
+    </ion-nav-buttons> -->
+  </ion-nav-bar>
+
+  <ion-content class="my-friends">
+    <div class="list slr-list">
+      <a class="item item-avatar item-icon-left item-icon-right" ng-repeat="friend in friends" href="#/app/myFriendsDetails/{{friend.relationship.uid}}">
+        <img ng-if="currentUser.pictureUrl" ng-src="{{currentUser.pictureUrl}}" />
+        <img ng-if="!currentUser.pictureUrl" src="assets/img/user/default-avatar.png" />
+        <div class="slr-item-text">
+	      <h2 ng-if="friend.relationship.nickname">{{friend.relationship.nickname}}</h2>
+          <h2 ng-if="!friend.relationship.nickname">{{friend.relationship.username}}</h2>
+        </div>
+        <i class="icon ion-ios-arrow-forward icon-small-x icon-shadow"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

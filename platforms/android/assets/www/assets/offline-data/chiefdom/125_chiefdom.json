@@ -1,0 +1,58 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Bendu",
+			"id": "126"
+		}
+	}, {
+		"location": {
+			"name": "Bum",
+			"id": "127"
+		}
+	}, {
+		"location": {
+			"name": "Dema",
+			"id": "128"
+		}
+	}, {
+		"location": {
+			"name": "Imperri",
+			"id": "129"
+		}
+	}, {
+		"location": {
+			"name": "Jong",
+			"id": "130"
+		}
+	}, {
+		"location": {
+			"name": "Kpanda",
+			"id": "131"
+		}
+	}, {
+		"location": {
+			"name": "Kwamebai Krim",
+			"id": "132"
+		}
+	}, {
+		"location": {
+			"name": "Nongoba Bullom",
+			"id": "133"
+		}
+	}, {
+		"location": {
+			"name": "Sittia",
+			"id": "134"
+		}
+	}, {
+		"location": {
+			"name": "Sogbini",
+			"id": "135"
+		}
+	}, {
+		"location": {
+			"name": "Yawbeko",
+			"id": "136"
+		}
+	}]
+}

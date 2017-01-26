@@ -1,0 +1,68 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Biriwa",
+			"id": "51"
+		}
+	}, {
+		"location": {
+			"name": "Bombali Shebora",
+			"id": "52"
+		}
+	}, {
+		"location": {
+			"name": "Gbanti Kamaranka",
+			"id": "53"
+		}
+	}, {
+		"location": {
+			"name": "Gbendembu Ngowahun",
+			"id": "54"
+		}
+	}, {
+		"location": {
+			"name": "Libeisaygahun",
+			"id": "55"
+		}
+	}, {
+		"location": {
+			"name": "Magbaiamba Ndowahun",
+			"id": "56"
+		}
+	}, {
+		"location": {
+			"name": "Makari Gbanti",
+			"id": "57"
+		}
+	}, {
+		"location": {
+			"name": "Paki Massabong",
+			"id": "58"
+		}
+	}, {
+		"location": {
+			"name": "Safroko Limba",
+			"id": "59"
+		}
+	}, {
+		"location": {
+			"name": "Sanda Loko",
+			"id": "60"
+		}
+	}, {
+		"location": {
+			"name": "Sanda Tenraren",
+			"id": "61"
+		}
+	}, {
+		"location": {
+			"name": "Sella Limba",
+			"id": "62"
+		}
+	}, {
+		"location": {
+			"name": "Tambakha",
+			"id": "63"
+		}
+	}]
+}

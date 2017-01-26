@@ -1,0 +1,23 @@
+{
+	"districts": [{
+		"district": {
+			"name": "Kailahun",
+			"id": "2"
+		}
+	}, {
+		"district": {
+			"name": "Kenema",
+			"id": "17"
+		}
+	}, {
+		"district": {
+			"name": "Kono",
+			"id": "34"
+		}
+	}, {
+		"district": {
+			"name": "Others",
+			"id": "1086"
+		}
+	}]
+}

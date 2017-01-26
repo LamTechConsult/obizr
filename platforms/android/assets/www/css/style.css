@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+.scroll {
+    height: 100%;
+}
+ 
+#map-view {
+    width: 100%;
+    height: 100%;
+}
+
+.staticpage{
+    color:#666 ! important;
+     font-size: 14px;
+}
+.staticpage li,
+.staticpage ul,
+.staticpage .item{
+ color:#666 ! important;   
+}
+
+.no-internet{
+    background: #d10 !important;
+}

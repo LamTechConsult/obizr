@@ -1,0 +1,49 @@
+<ion-view view-title="Main Menu">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="card" ng-if="serverErrors.length">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+
+    <div class="list">
+      <!--<a class="item item-icon-right" href="#/app/getting-started">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> What's New
+      </a>-->
+      <a class="item item-icon-right" href="#/app/about-app">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> About OBizR
+      </a>
+      <!--<a class="item item-icon-right" href="#/app/news">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Latest News Nearby
+      </a>
+      <a class="item item-icon-right" href="#/app/blog">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Latest Blog Posts Nearby
+      </a>-->
+      <!--<a class="item item-icon-right" href="#/app/rate">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Rate this app
+      </a>
+      <a class="item item-icon-right" href="#/app/share">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Share this app
+      </a>-->
+      <a class="item item-icon-right" href="#/privacy-policy">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Privacy Policy
+      </a>
+      <a class="item item-icon-right" href="#/term-of-use">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Term of use
+      </a>
+      <a class="item item-icon-right" href="#/support">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Contact
+      </a>
+      <a class="item item-icon-right" href="#/app/set-location">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Set Location
+      </a>
+      <a class="item item-icon-right" ng-click="doLogout()" ng-if="currentUser">
+        <i class="icon ion-ios-arrow-forward icon-small"></i> Log Out
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

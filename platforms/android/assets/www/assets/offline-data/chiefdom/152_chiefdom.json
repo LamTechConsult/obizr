@@ -1,0 +1,63 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Barri",
+			"id": "153"
+		}
+	}, {
+		"location": {
+			"name": "Gallines Perri",
+			"id": "154"
+		}
+	}, {
+		"location": {
+			"name": "Kpaka",
+			"id": "155"
+		}
+	}, {
+		"location": {
+			"name": "Kpanga",
+			"id": "156"
+		}
+	}, {
+		"location": {
+			"name": "Makpele",
+			"id": "157"
+		}
+	}, {
+		"location": {
+			"name": "Malen",
+			"id": "158"
+		}
+	}, {
+		"location": {
+			"name": "Mano Sakrim",
+			"id": "159"
+		}
+	}, {
+		"location": {
+			"name": "Panga Krim",
+			"id": "160"
+		}
+	}, {
+		"location": {
+			"name": "Peje",
+			"id": "161"
+		}
+	}, {
+		"location": {
+			"name": "Soro Gbema",
+			"id": "162"
+		}
+	}, {
+		"location": {
+			"name": "Sowa",
+			"id": "163"
+		}
+	}, {
+		"location": {
+			"name": "Yekomo Kpukumu Krim",
+			"id": "164"
+		}
+	}]
+}

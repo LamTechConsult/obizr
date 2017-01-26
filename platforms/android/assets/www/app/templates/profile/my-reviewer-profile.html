@@ -1,0 +1,54 @@
+<ion-view view-title="My Reviewer Profile">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+    <!-- <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-more" ng-click="editProfile()"></button>
+    </ion-nav-buttons> -->
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="card" ng-if="serverErrors.lenght">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+
+    <div class="item item-avatar avatar-top text-center">
+    <img ng-if="currentUser.pictureUrl" ng-src="{{currentUser.pictureUrl}}">
+      <img ng-if="!currentUser.pictureUrl" src="assets/img/user/default-avatar.png">
+    <h2 ng-if="currentUser.field_user_nick_name">{{currentUser.field_user_nick_name.und[0].value}}</h2>
+    <h2 ng-if="!currentUser.field_user_nick_name">{{currentUser.name}}</h2>
+    </div>
+
+    <div class="list slr-list border-bottom">
+      <div class="item item-icon-left">
+        <i class="icon ion-person"></i>
+        <div class="slr-item-text">
+        <h2>Full Name</h2>
+          <p>{{currentUser.field_user_nick_name.und[0].value}}</p>
+        </div>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-android-phone-portrait"></i>
+        <div class="slr-item-text">
+        <h2>Phone</h2>
+          <p>{{currentUser.field_mobile_user_telephone.und[0].value}}</p>
+        </div>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-email"></i>
+        <div class="slr-item-text">
+        <h2>Email</h2>
+          <p>{{currentUser.mail}}</p>
+        </div>
+      </div>
+      <div class="item item-icon-left last">
+        <i class="icon ion-document-text"></i>
+        <div class="slr-item-text">
+        <h2>About me</h2>
+          <p>{{currentUser.field_user_about_me.und[0].value}}</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

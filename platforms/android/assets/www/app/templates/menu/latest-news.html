@@ -1,0 +1,18 @@
+<ion-view view-title="News">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="list" ng-repeat="friend in friends">
+      <div class="card">
+        <div class="item item-divider">
+          Subject of the message{{friend.name}}
+        </div>
+        <div class="item item-text-wrap">
+          Name of the person who sent the message.{{friend.name}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

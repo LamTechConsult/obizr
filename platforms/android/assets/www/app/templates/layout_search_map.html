@@ -1,0 +1,18 @@
+<div style="width:100%;background-color:#E9E9E9;height:40px;">
+    <div style="float:left;margin-left:5px;margin-top:8px;width:10%;" ng-click="goHome()">
+        <!--<i class="icon ion-location" style="font-size:24px;"></i>-->
+        <a href style="text-decoration:none;font-size:12px;">List</a>
+    </div>
+    <div style="float:left;margin:auto;width:75%;margin-top:5px;">
+        <label class="item item-input" style="height:30px;width:100%;">
+            <i class="icon ion-search"></i>
+            &nbsp;&nbsp;
+            <input type="text" placeholder="Search" ng-model="searchText.text" ng-change="doSearch()" />
+        </label>
+    </div>
+    <div style="float:right;margin-top:8px;width:10%;text-align:right;margin-right:5px;" ng-click="filterClick()">
+        <!--<i class="icon ion-funnel" style="font-size:24px;"></i>-->
+        <a href style="text-decoration:none;font-size:12px;">Filter</a>
+    </div>
+    <div style="clear:both;"></div>
+</div>

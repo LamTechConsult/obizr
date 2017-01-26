@@ -1,0 +1,14 @@
+<ion-view view-title="Support">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+  </ion-nav-bar>
+
+ <ion-content>
+    <div class="list">
+	  <div class="card" ng-repeat="page in supportpage">
+        <div class="item item-divider">{{$index + 1}}. {{page.node.question}}</div>
+        <div class="item item-body" ng-bind-html="trustAsHtml(page.node.answer)"><!-- {{aboupage.description}} --></div>
+	  </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -81,7 +81,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.1.1",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-geolocation": "2.4.1"
+    "cordova-plugin-geolocation": "2.4.1",
+    "cordova-plugin-console": "1.0.5"
 };
 // BOTTOM OF METADATA
 });

@@ -1,5 +1,5 @@
 <ion-view view-title="nearby">
-  <ion-header-bar class="bar bar-positive bar-header item-input-inset">
+  <ion-header-bar class="bar bar-positive bar-header item-input-inset" ng-class="{'no-internet':isOffline}">
     <button class="button button-clear" ng-click="getMapView()">Map</button>
       <label class="item-input-wrapper search-box">
         <i class="icon ion-ios-search placeholder-icon"></i>
@@ -17,7 +17,8 @@
         <img ng-if="!bs.node.image.src || !isOffline" src="assets/img/fullsize_biz.png">
 	    <h2>{{bs.node.title}}</h2>
 	    <div class="biz-ratings {{bs.node.ratings | ratingClass}}">
-		  <span class="rating-numbers">{{bs.node.ratings | rating}}/5</span><div class="star-rating"><span style="width:{{bs.node.ratings}}"></span></div> {{bs.node.reviewcount}} Reviews
+		  <span class="rating-numbers">{{bs.node.ratings | rating}}/5</span>
+      <div class="star-rating"><span style="width:{{bs.node.ratings}}"></span></div> {{bs.node.reviewcount}} Reviews
         </div>
         <div class="biz-category">{{bs.node.category}}</div>
         <div class="biz-hours">Hours Today{{bs.node.hours | getTimeFormat}}</div>

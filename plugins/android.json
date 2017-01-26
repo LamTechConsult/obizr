@@ -21,6 +21,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
         }
     },
     "dependent_plugins": {

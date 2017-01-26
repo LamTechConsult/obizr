@@ -130,7 +130,8 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
             $scope.$apply();
         })
  
-  }, false);
+   }, false);
+  
 });
 
 OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {

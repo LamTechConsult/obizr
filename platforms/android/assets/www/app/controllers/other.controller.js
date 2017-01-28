@@ -28,10 +28,10 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
     $ionicHistory.goBack();
   }
   $scope.initializeFilterData = function () {
-    if($rootScope.filter == undefined){
+    if($rootScope.filter === undefined){
       $rootScope.filter = {};
       //$rootScope.filter.openNow = true;
-      $rootScope.filter.claimed = true;
+      // $rootScope.filter.claimed = true;
       // $rootScope.filter.distance = "ASC";
       // $rootScope.filter.reviews = "ASC";
       // $rootScope.filter.ratings = "ASC";
@@ -40,10 +40,12 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   /////////////////////Autocomplete fuctionality///////////////////////////////
   $scope.setModel = function (item) {
     $scope.selectedItem = item;
-     if($rootScope.currentFieldName == 'Category'){
-      $rootScope.filter.category = $scope.selectedItem.node.categoryid;
+    console.log('selected item is ..');
+    console.log(selectedItem);
+     if($rootScope.currentFieldName === 'Category'){
+      $rootScope.filter.category = $scope.selectedItem.node.name;
     }else{
-      $rootScope.filter.keywords = $scope.selectedItem.keyword.id;
+      $rootScope.filter.keywords = $scope.selectedItem.keyword.keyword;
     }
   };
 
@@ -56,7 +58,7 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   };
 
   $scope.autocompleteInput.itemSelectCallback = $scope.setModel;
-  if($rootScope.currentFieldName == 'Category'){
+  if($rootScope.currentFieldName === 'Category'){
     $scope.autocompleteInput.searchlist = $rootScope.category;
   }else{
     $scope.autocompleteInput.searchlist = $rootScope.keywords;

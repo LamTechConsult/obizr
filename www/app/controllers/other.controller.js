@@ -26,25 +26,25 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   }
   $scope.doSaveFilterFieldValue = function () {
     $ionicHistory.goBack();
-
   }
   $scope.initializeFilterData = function () {
     if($rootScope.filter == undefined){
       $rootScope.filter = {};
-      //$rootScope.filter.openNow = true;
-      $rootScope.filter.claimed = true;
-      // $rootScope.filter.distance = "ASC";
-      // $rootScope.filter.reviews = "ASC";
-      // $rootScope.filter.ratings = "ASC";
+      // //$rootScope.filter.openNow = true;
+      // $rootScope.filter.claimed = true;
+      // $rootScope.filter.distance = undefined;
+      // $rootScope.filter.reviews = undefined;
+      // $rootScope.filter.ratings = undefined;
     }
   }
   /////////////////////Autocomplete fuctionality///////////////////////////////
   $scope.setModel = function (item) {
     $scope.selectedItem = item;
+    console.log(item);
      if($rootScope.currentFieldName == 'Category'){
-      $rootScope.filter.category = $scope.selectedItem.node.categoryid;
+      $rootScope.filter.category = $scope.selectedItem.node.name;
     }else{
-      $rootScope.filter.keywords = $scope.selectedItem.keyword.id;
+      $rootScope.filter.keywords = $scope.selectedItem.keyword.keyword;
     }
   };
 
@@ -110,19 +110,20 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
           console.log($rootScope.searchedBusinesses);
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     }
+    console.log($rootScope.filter);
+    console.log($stateParams.srchId);
     if($stateParams.srchId == 'filterFromNearby'){
 
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
+      } else {
         $scope.doFilter('nonDefault');
       }
     }
-    if($stateParams.srchId == 'filterFromSearchRes'){
-      
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+    if($stateParams.srchId == 'filterFromSearchRes'){      
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
+      } else {
         $scope.doFilter('default');
       }
     }
@@ -138,7 +139,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
   }
   $scope.doSortBiz = function () {
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
-      businessesService.filterBusinesses()
+      businessesService.filterBusinesses($rootScope.filter)
       .then(function (biz) {
           $rootScope.searchedBusinesses = biz.nodes;
           $scope.doFilter('default');

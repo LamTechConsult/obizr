@@ -1,4 +1,4 @@
-<ion-view view-title="Reviewer Profile">
+<ion-view view-title="{{reviewerProfile.name}}">
   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-buttons side="right">
@@ -20,10 +20,10 @@
       <h2 class="light" ng-if="!reviewerProfile.field_user_nick_name">{{reviewerProfile.name}}</h2>
     </div>
 
- <!--    <div class="button-bar">
+ <div class="button-bar">
       <button class="button button-small icon icon-top ion-ios-plus-outline" ng-click="addFriend()">Add Friend</button>
       <button class="button button-small icon icon-top ion-arrow-right-c" ng-click="Follow()">Follow</button>
-    </div> -->
+    </div>
 
     <div class="list slr-list border-bottom">
       <div class="item item-icon-left">
@@ -43,7 +43,7 @@
     </div>
 
     <div class="recommended-reviews"  ng-hide="showMoreDetails">
-      <h5 class="dark-bg light padding m-none">Recent Reviews by
+      <h5 class="obizrbg light padding m-none">Recent Reviews by
       {{reviewerProfile.field_user_nick_name.und[0].value}}</h5>
       <div class="padding text-center" ng-if="!businessesReview.length">
       <ion-spinner icon="spiral"></ion-spinner></div>
@@ -52,7 +52,7 @@
           <img ng-if="bs.field_ltc_biz_photos.und" ng-src="{{bs.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(bs.uid)">
           <img ng-if="!bs.field_ltc_biz_photos.und" src="assets/img/fullsize_biz.png" ng-click="reviewerProfile(bs.uid)">
           <h4>{{bs.subject}}</h4>
-          <div class="biz-ratings {{bs.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerDetails(bs.cid)">
+          <div class="biz-ratings {{bs.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerProfile(bs.cid)">
             <span class="rating-numbers">{{bs.field_ltc_biz_rating.und[0].rating | rating}}/5</span><div class="star-rating"><span style="width:{{bs.field_ltc_biz_rating.und[0].rating | ratingPercentage}}"></span></div> <span am-time-ago="bs.created" am-preprocess="unix"></span>
           </div>
           <p>{{bs.comment_body.und[0]['value']}}</p>

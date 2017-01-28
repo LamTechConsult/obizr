@@ -8,15 +8,15 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
    //    taxonomyService.getCategory()
    //      .then(function (category) {
    //        $rootScope.category = category;
-   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');}); 
+   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');});
    //  taxonomyService.getKeywords()
    //      .then(function (keywords) {
    //        $rootScope.keywords = keywords;
-   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');}); 
+   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     $scope.initializeFilterData();
     //console.log($ionicHistory.backView());//get from state name
   });
-  
+
   $scope.setFilterValFor = function (caseStr) {
     $rootScope.currentFieldName = caseStr;
     $state.go('app.filterSetFieldValue');
@@ -63,10 +63,10 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   }else{
     $scope.autocompleteInput.searchlist = $rootScope.keywords;
   }
-  
+
   $scope.$root.$broadcast($scope.autocompleteInput.ID);
   /////////////////////////////////////////////////////////////////////////////
-  
+
   $scope.dofilterSerarch = function () {
     if($ionicHistory.backView().stateName == 'app.nearby'){
       $state.go('app.searchResults',{srchId:'filterFromNearby'});
@@ -120,7 +120,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
       }
     }
     if($stateParams.srchId == 'filterFromSearchRes'){
-      
+
       if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
         $scope.doSortBiz();
       }else{
@@ -177,10 +177,10 @@ OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cord
     var options = {timeout: 10000, enableHighAccuracy: true};
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
       var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
+
         var mapOptions = {
           center: myLatLng,
-          zoom: 5,
+          zoom: 10,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         $scope.map = new google.maps.Map(document.getElementById("map-view"), mapOptions);
@@ -211,7 +211,7 @@ OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cord
             infoWindow.open($scope.map, marker);
           });
           $scope.markers.push(marker);
-        }  
+        }
         //Taking 20 nearest biz for standard
         for (i = 0; i < 20; i++){
             createMarker($rootScope.displayBusinesses[i].node);

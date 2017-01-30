@@ -1,9 +1,9 @@
 <ion-view view-title="My Bookmarks">
   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
-   <!--  <ion-nav-buttons side="right">
+   <ion-nav-buttons side="right">
       <button class="button button-icon ion-more" ng-click="editProfile()"></button>
-    </ion-nav-buttons> -->
+    </ion-nav-buttons>
   </ion-nav-bar>
 
   <ion-content>
@@ -15,7 +15,7 @@
 
     <div class="list" ng-repeat="bookmark in bookmarks">
       <a class="item item-thumbnail-left" href="#">
-        <img src="cover.jpg">
+        <img src="assets/img/fullsize_biz.png">
         <h3>{{bookmark.node.name}}</h3>
         <p>Nine Inch Nails</p>
       </a>

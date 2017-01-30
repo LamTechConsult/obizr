@@ -8,15 +8,15 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
    //    taxonomyService.getCategory()
    //      .then(function (category) {
    //        $rootScope.category = category;
-   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');});
+   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');}); 
    //  taxonomyService.getKeywords()
    //      .then(function (keywords) {
    //        $rootScope.keywords = keywords;
-   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');});
+   //    }) .finally(function () { $rootScope.$broadcast('loading:hide');}); 
     $scope.initializeFilterData();
-    //console.log($ionicHistory.backView());//get from state name
+    console.log($ionicHistory.backView());//get from state name
   });
-
+  
   $scope.setFilterValFor = function (caseStr) {
     $rootScope.currentFieldName = caseStr;
     $state.go('app.filterSetFieldValue');
@@ -28,21 +28,20 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
     $ionicHistory.goBack();
   }
   $scope.initializeFilterData = function () {
-    if($rootScope.filter === undefined){
+    if($rootScope.filter == undefined){
       $rootScope.filter = {};
-      //$rootScope.filter.openNow = true;
+      // //$rootScope.filter.openNow = true;
       // $rootScope.filter.claimed = true;
-      // $rootScope.filter.distance = "ASC";
-      // $rootScope.filter.reviews = "ASC";
-      // $rootScope.filter.ratings = "ASC";
+      // $rootScope.filter.distance = undefined;
+      // $rootScope.filter.reviews = undefined;
+      // $rootScope.filter.ratings = undefined;
     }
   }
   /////////////////////Autocomplete fuctionality///////////////////////////////
   $scope.setModel = function (item) {
     $scope.selectedItem = item;
-    console.log('selected item is ..');
-    console.log(selectedItem);
-     if($rootScope.currentFieldName === 'Category'){
+    console.log(item);
+     if($rootScope.currentFieldName == 'Category'){
       $rootScope.filter.category = $scope.selectedItem.node.name;
     }else{
       $rootScope.filter.keywords = $scope.selectedItem.keyword.keyword;
@@ -58,15 +57,15 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   };
 
   $scope.autocompleteInput.itemSelectCallback = $scope.setModel;
-  if($rootScope.currentFieldName === 'Category'){
+  if($rootScope.currentFieldName == 'Category'){
     $scope.autocompleteInput.searchlist = $rootScope.category;
   }else{
     $scope.autocompleteInput.searchlist = $rootScope.keywords;
   }
-
+  
   $scope.$root.$broadcast($scope.autocompleteInput.ID);
   /////////////////////////////////////////////////////////////////////////////
-
+  
   $scope.dofilterSerarch = function () {
     if($ionicHistory.backView().stateName == 'app.nearby'){
       $state.go('app.searchResults',{srchId:'filterFromNearby'});
@@ -111,19 +110,20 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
           console.log($rootScope.searchedBusinesses);
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     }
+    console.log($rootScope.filter);
+    console.log($stateParams.srchId);
     if($stateParams.srchId == 'filterFromNearby'){
 
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
+      } else {
         $scope.doFilter('nonDefault');
       }
     }
-    if($stateParams.srchId == 'filterFromSearchRes'){
-
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+    if($stateParams.srchId == 'filterFromSearchRes'){      
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
+      } else {
         $scope.doFilter('default');
       }
     }
@@ -139,7 +139,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
   }
   $scope.doSortBiz = function () {
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
-      businessesService.filterBusinesses()
+      businessesService.filterBusinesses($rootScope.filter)
       .then(function (biz) {
           $rootScope.searchedBusinesses = biz.nodes;
           $scope.doFilter('default');
@@ -177,10 +177,10 @@ OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cord
     var options = {timeout: 10000, enableHighAccuracy: true};
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
       var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
+ 
         var mapOptions = {
           center: myLatLng,
-          zoom: 10,
+          zoom: 5,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         $scope.map = new google.maps.Map(document.getElementById("map-view"), mapOptions);
@@ -211,7 +211,7 @@ OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cord
             infoWindow.open($scope.map, marker);
           });
           $scope.markers.push(marker);
-        }
+        }  
         //Taking 20 nearest biz for standard
         for (i = 0; i < 20; i++){
             createMarker($rootScope.displayBusinesses[i].node);

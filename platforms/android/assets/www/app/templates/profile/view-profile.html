@@ -1,8 +1,8 @@
 <ion-view view-title="My Profile">
-  <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
+  <ion-nav-bar class="bar-positive" ng-class="{noInternet:isOffline}">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-buttons side="right">
-      <button class="button button-icon button-clear ion-more" ng-click="editProfile()"></button>
+      <button class="button button-icon button-clear" ng-click="editProfile()">Edit</button>
     </ion-nav-buttons>
   </ion-nav-bar>
 
@@ -50,9 +50,9 @@
         </div>
       </div>
     </div>
-    <div class="padding3x">
+    <div class="padding">
       <button class="button button-block button-calm" ng-click="editProfile()">EDIT PROFILE</button>
-     <!--  <button class="button button-block button-calm" ng-click="doLogout()">LOG OUT</button> -->
+     <button class="button button-block button-calm" ng-click="doLogout()" ng-if="currentUser">LOG OUT</button>
     </div>
   </ion-content>
 </ion-view>

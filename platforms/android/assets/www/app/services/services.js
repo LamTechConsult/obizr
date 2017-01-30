@@ -886,6 +886,7 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 	 * Filter businesse from backend.
 	 */
 	function filterBusinesses(filterData){
+		console.log(filterData);
 		var defer = $q.defer();
 
 			DataService.fetchFilteredBusinesses(filterData).success(function (data) {

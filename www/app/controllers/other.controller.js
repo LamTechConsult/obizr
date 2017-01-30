@@ -232,11 +232,17 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
     $rootScope.serverErrors = [];
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
     businessesService.searchedBusinessDetails($stateParams.bid).then(function (biz) {
+       $scope.bizClaim.changed =new Date();
        $scope.bizClaim.business_name  = biz.nodes[0].node.title;
-       $scope.bizClaim.field_claimed_biz_node_id = biz.nodes[0].node.nid;
        $scope.bizClaim.uid = $rootScope.currentUser.uid;
        $scope.bizClaim.type = 'obizr_backend';
        $scope.bizClaim.bundle = 'claim_business';
+      // prepopulated data
+       $scope.bizClaim.field_ltc_biz_email = $rootScope.currentUser.mail;
+       $scope.bizClaim.field_user_nick_name  = $rootScope.currentUser.field_user_nick_name.und[0].value;
+       $scope.bizClaim.field_ltc_user_telephone  = $rootScope.currentUser.field_mobile_user_telephone.und[0].value;
+       $scope.bizClaim.field_business_claimed  = biz.nodes[0].node.nid;
+    
     }) .finally(function () { $rootScope.$broadcast('loading:hide');});
   });
   $scope.$on("$ionicView.beforeLeave", function(event, data){

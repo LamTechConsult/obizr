@@ -194,7 +194,7 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
         $rootScope.newBizData.field_ltc_biz_address.und[0].locality = currentLocation.city;
       }
       if(fieldName == 'Geocode'){
-      
+      console.log($localStorage.currentLocation);
         $rootScope.newBizData.field_ltc_biz_address_geo.und[0].lat = $localStorage.currentLocation.lat;
         $rootScope.newBizData.field_ltc_biz_address_geo.und[0].lon = $localStorage.currentLocation.long;
         $rootScope.newBizData.field_ltc_biz_address_geo.und[0].geom =
@@ -207,7 +207,16 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
 
         $rootScope.newBizData.field_ltc_biz_address_geo.und[0].geohash =
           encodeGeoHash($localStorage.currentLocation.lat, $localStorage.currentLocation.long);
+        
+        $rootScope.newBizData.field_ltc_biz_address_geo.thoroughfare = currentLocation.thoroughfare;
+        $rootScope.newBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
+        $rootScope.newBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
+        
+        $rootScope.bizLocation.street = currentLocation.premise;
+        $rootScope.bizLocation.city = currentLocation.city;
 
+        console.log(currentLocation);
+        
         console.log($rootScope.newBizData.field_ltc_biz_address_geo);
         
       }
@@ -240,6 +249,14 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
 
         $rootScope.newBizData.field_ltc_biz_address_geo.und[0].geohash =
           encodeGeoHash($localStorage.currentLocation.lat, $localStorage.currentLocation.long);
+        
+        
+        $rootScope.newBizData.field_ltc_biz_address_geo.thoroughfare = currentLocation.thoroughfare;
+        $rootScope.newBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
+        $rootScope.newBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
+        
+        $rootScope.bizLocation.street = currentLocation.address;
+        $rootScope.bizLocation.city = currentLocation.city;
 
         $rootScope.$broadcast('loading:hide');
       },function(err) {
@@ -247,6 +264,7 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
         $rootScope.serverErrors.push('Unable to set loacation try after sometime.');
       });
     }
+    $rootScope.$broadcast('loading:hide');
   }
 
   var getTimeFromString = function (time) {
@@ -611,6 +629,14 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
 
         $rootScope.editBizData.field_ltc_biz_address_geo.und[0].geohash =
           encodeGeoHash($localStorage.currentLocation.lat, $localStorage.currentLocation.long);
+        
+        
+        $rootScope.editBizData.field_ltc_biz_address_geo.thoroughfare = currentLocation.thoroughfare;
+        $rootScope.editBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
+        $rootScope.editBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
+        
+        $rootScope.bizLocation.street = currentLocation.address;
+        $rootScope.bizLocation.city = currentLocation.city;
 
         console.log($rootScope.editBizData.field_ltc_biz_address_geo);
         
@@ -644,6 +670,14 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
 
         $rootScope.editBizData.field_ltc_biz_address_geo.und[0].geohash =
           encodeGeoHash($localStorage.currentLocation.lat, $localStorage.currentLocation.long);
+        
+        
+        $rootScope.editBizData.field_ltc_biz_address_geo.thoroughfare = currentLocation.thoroughfare;
+        $rootScope.editBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
+        $rootScope.editBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
+        
+        $rootScope.bizLocation.street = currentLocation.address;
+        $rootScope.bizLocation.city = currentLocation.city;
 
         $rootScope.$broadcast('loading:hide');
       },function(err) {

@@ -45,7 +45,8 @@
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Chiefdom')">
         <i class="icon ion-ios-arrow-right icon-small"></i>
-        <span class="item-note">Insert value</span>
+         <span class="item-note" ng-if="Chiefdom == '' || Chiefdom == undefined">Insert value</span>
+        <span class="item-note" ng-if="Chiefdom">{{Provience.location.name}} > {{District.district.name}} > {{Chiefdom.location.name}}</span>
         Chiefdom*
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Geocode')">

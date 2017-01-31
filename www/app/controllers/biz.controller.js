@@ -399,6 +399,26 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
   //   .then(function (keywords) {
   //     $rootScope.keywords = keywords;
   // }).finally(function () { $rootScope.$broadcast('loading:hide');});
+  
+    $scope.getDistrictItem = function (item) {
+      if(item==null)
+        return;
+      $rootScope.Provience = item;
+      $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
+      taxonomyService.getDistrict(item.location.id)
+          .then(function (district) {
+            $rootScope.DistrictItem = district;
+      }).finally(function () { $rootScope.$broadcast('loading:hide');});
+    }
+    $scope.getChiefdomItem = function (item) {
+      if(item==null)
+        return;
+      $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
+      taxonomyService.getChiefdoms(item.district.id)
+        .then(function (chiefdoms) {
+          $rootScope.ChiefdomItem = chiefdoms;
+      }).finally(function () { $rootScope.$broadcast('loading:hide');});
+    }
 
   $scope.$on("$ionicView.enter", function(event, data){
     $scope.serverErrors = [];

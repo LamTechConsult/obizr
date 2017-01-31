@@ -236,10 +236,8 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
        $scope.bizClaim.created = new Date();
        $scope.bizClaim.changed = new Date();
       
-       $scope.bizClaim.business_name  = biz.nodes[0].node.title;
+       $scope.bizClaim.title  = biz.nodes[0].node.title;
        $scope.bizClaim.uid = $rootScope.currentUser.uid;
-       $scope.bizClaim.id = $rootScope.currentUser.uid;
-       $scope.bizClaim.uuid = $rootScope.currentUser.uid;
        $scope.bizClaim.type = 'claim_business';
       
       
@@ -295,12 +293,13 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
       
       $scope.bizClaim.field_user_nick_name.und[0].safe_value = $scope.bizClaim.field_user_nick_name.und[0].value;
       
-      
       $scope.bizClaim.field_claim_message.und[0].format = null;
+      
+      $scope.bizClaim.field_ltc_biz_email.und[0].email =  $scope.bizClaim.field_ltc_biz_email.und[0].value;
       
       $scope.bizClaim.field_claim_message.und[0].safe_value = $scope.bizClaim.field_claim_message.und[0].value;
       
-       $scope.bizClaim.changed = new Date();
+      $scope.bizClaim.changed = new Date();
       
 
       //TODO:request api to send mail or write code to mail.

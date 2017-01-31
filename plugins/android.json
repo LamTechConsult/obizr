@@ -1,0 +1,24 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        }
+    },
+    "dependent_plugins": {}
+}

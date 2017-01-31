@@ -1,5 +1,5 @@
 
-OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService) {
+OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService,$cordovaNetwork) {
   $rootScope.ProvienceItem = [];
   $rootScope.DistrictItem = [];
   $rootScope.ChiefdomItem = [];
@@ -106,8 +106,6 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
   }else{
     $rootScope.currentLocation = $localStorage.currentLocation;
   }
-<<<<<<< HEAD
-=======
 
   document.addEventListener("deviceready", function () {
  
@@ -134,7 +132,6 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
  
    }, false);
   
->>>>>>> parent of 1f61162... add geolocation support
 });
 
 OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {

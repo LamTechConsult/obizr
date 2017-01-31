@@ -264,7 +264,6 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
         $rootScope.serverErrors.push('Unable to set loacation try after sometime.');
       });
     }
-    $rootScope.$broadcast('loading:hide');
   }
 
   var getTimeFromString = function (time) {

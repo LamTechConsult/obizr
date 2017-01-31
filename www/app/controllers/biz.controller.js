@@ -584,12 +584,18 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
   
   $scope.captureCurrentLocation = function (fieldName) {
     $scope.serverErrors = [];
+    $rootScope.bizLocation = {};
     if(!$localStorage.currentLocation.address){
       $scope.serverErrors.push('Set your location first.');
       return;
     }
     console.log($localStorage.currentLocation);
     $rootScope.editBizData.field_ltc_biz_address.und = []
+    $rootScope.editBizData.field_ltc_biz_address_geo.und = []
+
+    
+    $rootScope.editBizData.field_ltc_biz_address.und[0] = {};
+    $rootScope.editBizData.field_ltc_biz_address_geo.und[0] = {};
     //////////////////////////////////////////////////////////////
     var currentLocation = {premise:""};//$localStorage.currentLocation.address.split(','); 
       for (var i = 0; i < $localStorage.currentLocation.address_components.length; i++) {
@@ -635,7 +641,7 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
         $rootScope.editBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
         $rootScope.editBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
         
-        $rootScope.bizLocation.street = currentLocation.address;
+        $rootScope.bizLocation.street = currentLocation.premise;
         $rootScope.bizLocation.city = currentLocation.city;
 
         console.log($rootScope.editBizData.field_ltc_biz_address_geo);
@@ -645,6 +651,7 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
 
   $scope.enterNewLocation = function () {
     $scope.serverErrors = [];
+    $rootScope.bizLocation = {};
     if($rootScope.bizLocation.street == undefined){
       $scope.serverErrors.push('Street is required.');
       return;
@@ -676,7 +683,7 @@ OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraServi
         $rootScope.editBizData.field_ltc_biz_address_geo.premise = currentLocation.premise;
         $rootScope.editBizData.field_ltc_biz_address_geo.locality = currentLocation.city;
         
-        $rootScope.bizLocation.street = currentLocation.address;
+        $rootScope.bizLocation.street = currentLocation.premise;
         $rootScope.bizLocation.city = currentLocation.city;
 
         $rootScope.$broadcast('loading:hide');

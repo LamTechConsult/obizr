@@ -36,7 +36,7 @@
 
     <div ng-switch-when="Address">
       <div class="list">
-        <div class="padding"><button class="button button-block button-assertive">Use my current location</button></div>
+        <div class="padding"><button class="button button-block button-calm"  ng-click="captureCurrentLocation('Address')">Use my current location</button></div>
         <label class="item item-input">
           <input type="text" placeholder="Example: 84 Kissy Road" ng-model="editBizData.field_ltc_biz_address.und[0].thoroughfare">
         </label>
@@ -56,6 +56,15 @@
         <div class="padding">
      	  <button class="button button-block button-calm" ng-click="captureCurrentLocation('Geocode')"><i class="ion-ios-location"></i> Use my current location</button>
      	  <button class="button button-block button-calm" ng-click="enterNewLocation()"><i class="ion-android-locate"></i>Use my new address</button>
+          <div class="list">
+         <label class="item item-input">
+           <input type="text" ng-model="bizLocation.street" placeholder="Street">
+         </label>
+
+         <label class="item item-input">
+           <input type="text" ng-model="bizLocation.city" placeholder="City">
+         </label>
+        </div>
         </div>
       </div>
     </div>

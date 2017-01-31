@@ -233,8 +233,8 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
     businessesService.searchedBusinessDetails($stateParams.bid).then(function (biz) {
       
-       $scope.bizClaim.created = new Date();
-       $scope.bizClaim.changed = new Date();
+       $scope.bizClaim.created = Math.round(+new Date()/1000);
+       $scope.bizClaim.changed = Math.round(+new Date()/1000);
       
        $scope.bizClaim.title  = biz.nodes[0].node.title;
        $scope.bizClaim.uid = $rootScope.currentUser.uid;
@@ -299,7 +299,7 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
       
       $scope.bizClaim.field_claim_message.und[0].safe_value = $scope.bizClaim.field_claim_message.und[0].value;
       
-      $scope.bizClaim.changed = new Date();
+      $scope.bizClaim.changed = Math.round(+new Date()/1000);
       
 
       //TODO:request api to send mail or write code to mail.

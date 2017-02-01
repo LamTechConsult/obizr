@@ -9,10 +9,10 @@
         {{serverError}}
       </div>
     </div>
-    <div ng-if="isOffline">
+    <div ng-if="!isOffline">
       <div class="item item-text-wrap error">Oops!. No Internet connection. You are using this app in offline mode, connect your device from internet to use location service.</div>
     </div>
-    <div ng-if="!isOffline">
+    <div ng-if="isOffline">
       <div class="padding">
       <button class="button button-block button-calm" ng-click="captureCurrentLocation()"><i class="ion-ios-location"></i> Use my current location</button>
       <button class="button button-block button-calm" ng-click="enterNewLocation()"><i class="ion-android-locate"></i>Use my new address</button>

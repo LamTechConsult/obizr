@@ -197,7 +197,7 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
       'access': AuthenticationServiceConstant.accessLevels.user
     }
   })
- 
+
   .state('app.anonymous', {
     url: '/anonymous',
     cache:false,
@@ -480,7 +480,7 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
       }
     }
   })
-   
+
    .state('app.businessDirectionsMapStartPointLocation',{
     cache:false,
     url:'/businessDirectionsMapStartPointLocation/:bid',
@@ -491,7 +491,7 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
       }
     }
   })
-   
+
     .state('app.businessDirectionsMapEndPoint',{
       cache:false,
     url:'/businessDirectionsMapEndPoint/:bid',
@@ -502,7 +502,7 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
       }
     }
   })
-	
+
 	.state('app.businessDirectionsMapEndPointLocation',{
     cache:false,
     url:'/businessDirectionsMapEndPointLocation/:bid',
@@ -553,7 +553,7 @@ OBizR.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork,
     //http://angular-ui.github.io/ui-router/site/#/api/ui.router.router.$urlRouterProvider#methods_deferintercept
     //location change logic => before any view is rendered
     $rootScope.$on('$locationChangeStart', locationChangeStartCallback)
-    
+
     $rootScope.$on('$cordovaNetwork:offline', offlineCallback);
     $rootScope.$on('$cordovaNetwork:online', onlineCallback);
 
@@ -572,14 +572,15 @@ OBizR.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork,
 
     //we need this to have out current auth state before any other thing in router happens
     function locationChangeStartCallback(e) {
-      
-      $rootScope.isOffline = !$window.navigator.onLine;
-      
+
+      $rootScope.isOffline = $window.navigator.onLine;
       $window.addEventListener("online", function () {
+        $rootScope.isOffline = true;
         $rootScope.$digest();
       }, true);
 
       $window.addEventListener("offline", function () {
+        $rootScope.isOffline = false;
           $rootScope.$digest();
       }, true);
 
@@ -633,7 +634,7 @@ OBizR.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork,
       {path:'app.addbusiness'},
       {path:'app.writeReview'},
       {path:'app.editBusiness'},
-      {path:'app.claimBiz'},      
+      {path:'app.claimBiz'},
     ];
     $rootScope.needAuthorization = function (argument) {
       var flag = false;

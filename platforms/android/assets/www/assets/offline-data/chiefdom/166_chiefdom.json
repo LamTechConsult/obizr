@@ -1,0 +1,148 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Waterloo",
+			"id": "167"
+		}
+	}, {
+		"location": {
+			"name": "Newton",
+			"id": "168"
+		}
+	}, {
+		"location": {
+			"name": "Leicester",
+			"id": "169"
+		}
+	}, {
+		"location": {
+			"name": "Benguema",
+			"id": "170"
+		}
+	}, {
+		"location": {
+			"name": "Grafton",
+			"id": "171"
+		}
+	}, {
+		"location": {
+			"name": "Hastings",
+			"id": "172"
+		}
+	}, {
+		"location": {
+			"name": "York",
+			"id": "173"
+		}
+	}, {
+		"location": {
+			"name": "Tombo",
+			"id": "174"
+		}
+	}, {
+		"location": {
+			"name": "Adonkia",
+			"id": "175"
+		}
+	}, {
+		"location": {
+			"name": "Lakka",
+			"id": "176"
+		}
+	}, {
+		"location": {
+			"name": "Tokeh",
+			"id": "177"
+		}
+	}, {
+		"location": {
+			"name": "Kwama",
+			"id": "178"
+		}
+	}, {
+		"location": {
+			"name": "Samuel Town",
+			"id": "179"
+		}
+	}, {
+		"location": {
+			"name": "Kola Town",
+			"id": "180"
+		}
+	}, {
+		"location": {
+			"name": "Joe Town",
+			"id": "181"
+		}
+	}, {
+		"location": {
+			"name": "Sussex",
+			"id": "182"
+		}
+	}, {
+		"location": {
+			"name": "Bathurst",
+			"id": "183"
+		}
+	}, {
+		"location": {
+			"name": "Baw Baw",
+			"id": "184"
+		}
+	}, {
+		"location": {
+			"name": "Dublin",
+			"id": "185"
+		}
+	}, {
+		"location": {
+			"name": "Ricketts",
+			"id": "186"
+		}
+	}, {
+		"location": {
+			"name": "Fogbo",
+			"id": "187"
+		}
+	}, {
+		"location": {
+			"name": "Gloucester",
+			"id": "188"
+		}
+	}, {
+		"location": {
+			"name": "Kent",
+			"id": "189"
+		}
+	}, {
+		"location": {
+			"name": "Tissana",
+			"id": "190"
+		}
+	}, {
+		"location": {
+			"name": "Kossoh Town",
+			"id": "191"
+		}
+	}, {
+		"location": {
+			"name": "Roke",
+			"id": "192"
+		}
+	}, {
+		"location": {
+			"name": "Rokupa",
+			"id": "193"
+		}
+	}, {
+		"location": {
+			"name": "Russell",
+			"id": "194"
+		}
+	}, {
+		"location": {
+			"name": "Stones Town",
+			"id": "195"
+		}
+	}]
+}

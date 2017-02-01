@@ -1,0 +1,58 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Gbonkolenken",
+			"id": "97"
+		}
+	}, {
+		"location": {
+			"name": "Kafe Simiria",
+			"id": "98"
+		}
+	}, {
+		"location": {
+			"name": "Kalansongoia",
+			"id": "99"
+		}
+	}, {
+		"location": {
+			"name": "Kholifa Mabang",
+			"id": "100"
+		}
+	}, {
+		"location": {
+			"name": "Kholifa Rowalla",
+			"id": "101"
+		}
+	}, {
+		"location": {
+			"name": "Kunike Barina",
+			"id": "102"
+		}
+	}, {
+		"location": {
+			"name": "Kunike",
+			"id": "103"
+		}
+	}, {
+		"location": {
+			"name": "Malal Mara",
+			"id": "104"
+		}
+	}, {
+		"location": {
+			"name": "Sambaia",
+			"id": "105"
+		}
+	}, {
+		"location": {
+			"name": "Tane",
+			"id": "106"
+		}
+	}, {
+		"location": {
+			"name": "Yoni",
+			"id": "107"
+		}
+	}]
+}

@@ -1,0 +1,38 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Briama",
+			"id": "65"
+		}
+	}, {
+		"location": {
+			"name": "Gbinle Dixing",
+			"id": "66"
+		}
+	}, {
+		"location": {
+			"name": "Magbema",
+			"id": "67"
+		}
+	}, {
+		"location": {
+			"name": "Mambolo",
+			"id": "68"
+		}
+	}, {
+		"location": {
+			"name": "Masungbala",
+			"id": "69"
+		}
+	}, {
+		"location": {
+			"name": "Samu",
+			"id": "70"
+		}
+	}, {
+		"location": {
+			"name": "Tonko Limba",
+			"id": "71"
+		}
+	}]
+}

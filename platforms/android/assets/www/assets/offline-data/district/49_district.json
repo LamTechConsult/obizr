@@ -1,0 +1,33 @@
+{
+	"districts": [{
+		"district": {
+			"name": "Bombali District",
+			"id": "50"
+		}
+	}, {
+		"district": {
+			"name": "Kambia District",
+			"id": "64"
+		}
+	}, {
+		"district": {
+			"name": "Koinadugu District",
+			"id": "72"
+		}
+	}, {
+		"district": {
+			"name": "Port Loko District",
+			"id": "84"
+		}
+	}, {
+		"district": {
+			"name": "Tonkolili District",
+			"id": "96"
+		}
+	}, {
+		"district": {
+			"name": "Others",
+			"id": "1091"
+		}
+	}]
+}

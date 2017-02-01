@@ -1,0 +1,58 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Bureh Kaseh",
+			"id": "85"
+		}
+	}, {
+		"location": {
+			"name": "Buya Romende",
+			"id": "86"
+		}
+	}, {
+		"location": {
+			"name": "Debia",
+			"id": "87"
+		}
+	}, {
+		"location": {
+			"name": "Kaffu Bullom",
+			"id": "88"
+		}
+	}, {
+		"location": {
+			"name": "Koyo",
+			"id": "89"
+		}
+	}, {
+		"location": {
+			"name": "Loko Massama",
+			"id": "90"
+		}
+	}, {
+		"location": {
+			"name": "Maforki",
+			"id": "91"
+		}
+	}, {
+		"location": {
+			"name": "Marampa",
+			"id": "92"
+		}
+	}, {
+		"location": {
+			"name": "Masimera",
+			"id": "93"
+		}
+	}, {
+		"location": {
+			"name": "Sanda Magbolontor",
+			"id": "94"
+		}
+	}, {
+		"location": {
+			"name": "Tinkatupa Maka Safroko",
+			"id": "95"
+		}
+	}]
+}

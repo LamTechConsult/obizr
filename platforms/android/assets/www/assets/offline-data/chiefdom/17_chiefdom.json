@@ -1,0 +1,83 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Dama",
+			"id": "18"
+		}
+	}, {
+		"location": {
+			"name": "Dodo",
+			"id": "19"
+		}
+	}, {
+		"location": {
+			"name": "Gaura",
+			"id": "20"
+		}
+	}, {
+		"location": {
+			"name": "Gorama Mende",
+			"id": "21"
+		}
+	}, {
+		"location": {
+			"name": "Kando Leppeama",
+			"id": "22"
+		}
+	}, {
+		"location": {
+			"name": "Koya",
+			"id": "23"
+		}
+	}, {
+		"location": {
+			"name": "Langrama",
+			"id": "24"
+		}
+	}, {
+		"location": {
+			"name": "Lower Bambara",
+			"id": "25"
+		}
+	}, {
+		"location": {
+			"name": "Malegohun",
+			"id": "26"
+		}
+	}, {
+		"location": {
+			"name": "Niawa",
+			"id": "27"
+		}
+	}, {
+		"location": {
+			"name": "Nomo",
+			"id": "28"
+		}
+	}, {
+		"location": {
+			"name": "Nongowa",
+			"id": "29"
+		}
+	}, {
+		"location": {
+			"name": "Simbaru",
+			"id": "30"
+		}
+	}, {
+		"location": {
+			"name": "Small Bo",
+			"id": "31"
+		}
+	}, {
+		"location": {
+			"name": "Tunkia",
+			"id": "32"
+		}
+	}, {
+		"location": {
+			"name": "Wandor",
+			"id": "33"
+		}
+	}]
+}

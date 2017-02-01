@@ -1,0 +1,58 @@
+{
+	"locations": [{
+		"location": {
+			"name": "Dembelia Sikunia",
+			"id": "73"
+		}
+	}, {
+		"location": {
+			"name": "Diang",
+			"id": "74"
+		}
+	}, {
+		"location": {
+			"name": "Folasaba",
+			"id": "75"
+		}
+	}, {
+		"location": {
+			"name": "Kasunko",
+			"id": "76"
+		}
+	}, {
+		"location": {
+			"name": "Mongo",
+			"id": "77"
+		}
+	}, {
+		"location": {
+			"name": "Neya",
+			"id": "78"
+		}
+	}, {
+		"location": {
+			"name": "Nieni",
+			"id": "79"
+		}
+	}, {
+		"location": {
+			"name": "Sengbe",
+			"id": "80"
+		}
+	}, {
+		"location": {
+			"name": "Sulima",
+			"id": "81"
+		}
+	}, {
+		"location": {
+			"name": "Wara Wara Bafodea",
+			"id": "82"
+		}
+	}, {
+		"location": {
+			"name": "Wara Wara Yagala",
+			"id": "83"
+		}
+	}]
+}

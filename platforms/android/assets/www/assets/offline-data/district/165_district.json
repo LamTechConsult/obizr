@@ -1,0 +1,18 @@
+{
+	"districts": [{
+		"district": {
+			"name": "Western Area Rural",
+			"id": "166"
+		}
+	}, {
+		"district": {
+			"name": "Western Area Urban",
+			"id": "196"
+		}
+	}, {
+		"district": {
+			"name": "Others",
+			"id": "1101"
+		}
+	}]
+}

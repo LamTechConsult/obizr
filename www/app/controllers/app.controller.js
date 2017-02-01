@@ -1,5 +1,5 @@
 
-OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService) {
+OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService,$cordovaNetwork) {
   $rootScope.ProvienceItem = [];
   $rootScope.DistrictItem = [];
   $rootScope.ChiefdomItem = [];

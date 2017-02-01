@@ -106,6 +106,7 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
   }else{
     $rootScope.currentLocation = $localStorage.currentLocation;
   }
+<<<<<<< HEAD
 
   document.addEventListener("deviceready", function () {
  
@@ -132,6 +133,8 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
  
    }, false);
   
+=======
+>>>>>>> fixissue
 });
 
 OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {

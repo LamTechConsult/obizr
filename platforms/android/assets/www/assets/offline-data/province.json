@@ -1,0 +1,29 @@
+{
+	"locations": [{
+		"location": {
+			"name": " ",
+			"id": "0"
+		}
+	},
+	{
+		"location": {
+			"name": "Eastern",
+			"id": "1"
+		}
+	}, {
+		"location": {
+			"name": "Northern",
+			"id": "49"
+		}
+	}, {
+		"location": {
+			"name": "Southern Province",
+			"id": "108"
+		}
+	}, {
+		"location": {
+			"name": "Western Area",
+			"id": "165"
+		}
+	}]
+}

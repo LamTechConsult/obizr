@@ -14,6 +14,12 @@
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
+<<<<<<< HEAD
+=======
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+>>>>>>> fixissue
     <name>OBizR</name>
     <description>
     OBizR Sierra Leone - location-based business reviews and travel guide application. Use OBizR to quickly find top rated businesses nearby and write reviews about them. OBizR is your local guide to finding the best places to eat, shop, drink, sleep, relax and play

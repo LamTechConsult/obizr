@@ -1,0 +1,28 @@
+{
+	"districts": [{
+		"district": {
+			"name": "Bo District",
+			"id": "109"
+		}
+	}, {
+		"district": {
+			"name": "Bonthe District",
+			"id": "125"
+		}
+	}, {
+		"district": {
+			"name": "Moyamba District",
+			"id": "137"
+		}
+	}, {
+		"district": {
+			"name": "Pujehun District",
+			"id": "152"
+		}
+	}, {
+		"district": {
+			"name": "Others",
+			"id": "1096"
+		}
+	}]
+}

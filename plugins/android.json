@@ -18,7 +18,23 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.obizr.obizrsl"
+<<<<<<< HEAD
         }
     },
     "dependent_plugins": {}
+=======
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.obizr.obizrsl"
+        }
+    }
+>>>>>>> fixissue
 }

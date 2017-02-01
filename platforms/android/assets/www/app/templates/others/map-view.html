@@ -1,0 +1,15 @@
+<ion-view view-title="Map view">
+  <ion-header-bar class="bar bar-positive bar-header item-input-inset">
+    <button class="button button-clear" ng-click="listBizView()">List</button>
+      <label class="item-input-wrapper search-box">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Businesses Current Location" ng-model="searchText" ng-change="doSearch()" />
+      </label>
+    <button class="button button-clear" ng-click="getFilterView()">Filter</button>
+  </ion-header-bar>
+
+  <ion-content>
+    <div id="map-view" data-tap-disabled="true" ng-if="isOffline"></div>
+    <div class="item item-text-wrap error" ng-if="!isOffline">Oops!. No Internet connection. You are using this app in offline mode, connect your device from internet to use location service.</div>
+  </ion-content>
+</ion-view>

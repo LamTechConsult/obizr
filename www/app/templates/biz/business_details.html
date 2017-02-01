@@ -1,7 +1,10 @@
 <ion-view view-title="">
    <ion-nav-bar class="bar-positive">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
-    <ion-nav-title><img src="assets/img/splash_logo_small.png"/></ion-nav-title>
+    <ion-nav-title><img src="assets/img/obizr-logo-icon.png"/></ion-nav-title>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-more" ng-click="writeReviewClick()"></button>
+    </ion-nav-buttons>
   </ion-nav-bar>
 
   <ion-content class="biz-page">
@@ -110,15 +113,15 @@
         <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in businessesReview">
           <img ng-if="bs.field_ltc_biz_photos.und" ng-src="{{bs.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(bs.uid)">
           <img ng-if="!bs.field_ltc_biz_photos.und" src="assets/img/fullsize_biz.png" ng-click="reviewerProfile(bs.uid)">
-	        <h4>{{bs.subject}}</h4>
+	        <h4 ng-click="reviewerDetails(bs.cid)">{{bs.subject}}</h4>
   	      <div class="biz-ratings {{bs.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerDetails(bs.cid)">
   		      <span class="rating-numbers">{{bs.field_ltc_biz_rating.und[0].rating | rating}}/5</span>
             <div class="star-rating">
               <span style="width:{{bs.field_ltc_biz_rating.und[0].rating | ratingPercentage}}"></span>
             </div> <span am-time-ago="bs.created" am-preprocess="unix"></span>
           </div>
-          <p>{{bs.comment_body.und[0]['value']}}</p>
-          <i class="icon ion-ios-arrow-right icon-small"></i>
+          <p ng-click="reviewerDetails(bs.cid)">{{bs.comment_body.und[0]['value']}}</p>
+          <i class="icon ion-ios-arrow-right icon-small" ng-click="reviewerDetails(bs.cid)"></i>
         </ion-item>
       </ion-list>
     </div>

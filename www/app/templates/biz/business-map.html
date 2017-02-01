@@ -3,7 +3,7 @@
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
    <ion-nav-buttons side="right">
       <a class="button button-icon button-clear" ng-href="tel:{{businessesDetails.phone}}">
-        Call<i class="icon ion-ios-telephone"></i>
+        <i class="icon ion-ios-telephone"></i>
       </a>
     </ion-nav-buttons>
   </ion-nav-bar>
@@ -11,10 +11,9 @@
   <ion-content class="ion-biz-map-content">
     <div class="row biz-map-details">
       <div class="col col-75">
-	    <h4>{{businessesDetails.title}}</h4>
+	    <h6>{{businessesDetails.title}}</h6>
 	    <p><span>{{businessesDetails.street}},</span>
-        <span ng-if="businessesDetails.city"> {{businessesDetails.city}}</span>
-        <span ng-if="businessesDetails.country">, {{businessesDetails.country}}</span></p>
+        <span ng-if="businessesDetails.city"> {{businessesDetails.city}}</span></p>
       </div>
       <div class="col text-right">
 	    <button class="button button-light shadow-none icon icon-top ion-ios-navigate-outline" ng-click="showDirectionMapClick()">Direction</button>

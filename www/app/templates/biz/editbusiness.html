@@ -1,4 +1,4 @@
-<ion-view view-title="Edit Business">
+<ion-view view-title="Edit a business">
    <ion-nav-bar class="bar-positive">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-buttons side="right">
@@ -45,12 +45,15 @@
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Chiefdom')">
         <i class="icon ion-ios-arrow-right icon-small"></i>
-        <span class="item-note">Insert value</span>
+         <span class="item-note" ng-if="Chiefdom == '' || Chiefdom == undefined">Insert value</span>
+        <span class="item-note" ng-if="Chiefdom">{{Provience.location.name}} > {{District.district.name}} > {{Chiefdom.location.name}}</span>
         Chiefdom*
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Geocode')">
         <i class="icon ion-ios-arrow-right icon-small"></i>
-        <span class="item-note">Insert value</span>
+        <span class="item-note" ng-if="editBizData.field_ltc_biz_address_geo.thoroughfare == undefined">Insert value</span>
+        <span class="item-note" ng-if="editBizData.field_ltc_biz_address_geo.thoroughfare">
+        {{editBizData.field_ltc_biz_address_geo.thoroughfare}},{{editBizData.field_ltc_biz_address_geo.locality}}</span>
         Map your business Location*
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Email')">

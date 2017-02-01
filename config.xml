@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.obizr.obizrsl" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.obizr.obizrsl" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>OBizR</name>
     <description>
     OBizR Sierra Leone - location-based business reviews and travel guide application. Use OBizR to quickly find top rated businesses nearby and write reviews about them. OBizR is your local guide to finding the best places to eat, shop, drink, sleep, relax and play

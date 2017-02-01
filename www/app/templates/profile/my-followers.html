@@ -1,9 +1,9 @@
 <ion-view view-title="My Followers">
-  <ion-nav-bar class="bar-positive">
+  <ion-nav-bar class="bar-positive"  ng-class="{noInternet:!isOffline}">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
-    <!-- <ion-nav-buttons side="right">
+    <ion-nav-buttons side="right">
       <button class="button button-icon ion-more" ng-click="editProfile()"></button>
-    </ion-nav-buttons> -->
+    </ion-nav-buttons>
   </ion-nav-bar>
 
   <ion-content class="my-friends">

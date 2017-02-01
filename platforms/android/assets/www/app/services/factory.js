@@ -157,7 +157,7 @@ OBizR.factory('StaticPageService', function($http,DrupalApiConstant) {
 /**
  * DataService :
  */
-OBizR.factory('DataService', function($http,DrupalApiConstant) {
+OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConstant) {
   var dataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {};
@@ -197,6 +197,7 @@ OBizR.factory('DataService', function($http,DrupalApiConstant) {
   dataService.fetchCategory = function() {
     url = basePath + "slbiz/app-category-home.json";
     Localurl = "assets/offline-data/app-category-home.json";
+    console.log(url);
     return $http.get(Localurl,config);
   }
   //fetchcategory
@@ -234,10 +235,41 @@ OBizR.factory('DataService', function($http,DrupalApiConstant) {
     return $http.get(url,config);
   }
   //query search business
-  dataService.fetchFilteredBusinesses = function(filterData) { 
-    url = basePath + "slbiz/app-business-home.json?category=&chiefdom=&keyword=&city=&sort_by=field_ltc_biz_rating_rating&sort_order=ASC";
+  dataService.fetchFilteredBusinesses = function (filterData) { 
+    
+
+    if (filterData.distance) {
+      filterData.sort_by = "field_geofield_distance";
+    } else if (filterData.reviews) {
+      filterData.sort_by = "comment_count";
+    } else if (filterData.ratings) {
+      filterData.sort_by = "field_ltc_biz_rating_rating";
+    }
+
+    if (filterData.claimed === true) {
+      filterData.claimed = 1;
+    } else {
+      filterData.claimed = 0;
+    }
+
+    console.log(filterData);
+
+    url = basePath + "slbiz/search.json" 
+    if (!angular.equals({}, filterData)) {
+      url += "?" + $httpParamSerializer(filterData)
+    }      
+    console.log(url);
     return $http.get(url,config);
   }
 
   return dataService;
 });
+
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return JSON.stringify(obj) === JSON.stringify({});
+}

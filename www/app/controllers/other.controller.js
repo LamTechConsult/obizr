@@ -26,25 +26,25 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   }
   $scope.doSaveFilterFieldValue = function () {
     $ionicHistory.goBack();
-
   }
   $scope.initializeFilterData = function () {
     if($rootScope.filter == undefined){
       $rootScope.filter = {};
-      //$rootScope.filter.openNow = true;
-      $rootScope.filter.claimed = true;
-      // $rootScope.filter.distance = "ASC";
-      // $rootScope.filter.reviews = "ASC";
-      // $rootScope.filter.ratings = "ASC";
+      // //$rootScope.filter.openNow = true;
+      // $rootScope.filter.claimed = true;
+      // $rootScope.filter.distance = undefined;
+      // $rootScope.filter.reviews = undefined;
+      // $rootScope.filter.ratings = undefined;
     }
   }
   /////////////////////Autocomplete fuctionality///////////////////////////////
   $scope.setModel = function (item) {
     $scope.selectedItem = item;
+    console.log(item);
      if($rootScope.currentFieldName == 'Category'){
-      $rootScope.filter.category = $scope.selectedItem.node.categoryid;
+      $rootScope.filter.category = $scope.selectedItem.node.name;
     }else{
-      $rootScope.filter.keywords = $scope.selectedItem.keyword.id;
+      $rootScope.filter.keywords = $scope.selectedItem.keyword.keyword;
     }
   };
 
@@ -110,24 +110,25 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
           console.log($rootScope.searchedBusinesses);
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     }
+    console.log($rootScope.filter);
+    console.log($stateParams.srchId);
     if($stateParams.srchId == 'filterFromNearby'){
 
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
-        $scope.doFiler('nonDefault');
+      } else {
+        $scope.doFilter('nonDefault');
       }
     }
-    if($stateParams.srchId == 'filterFromSearchRes'){
-      
-      if($rootScope.filter.distance!= undefined || $rootScope.filter.reviews!= undefined || $rootScope.filter.ratings!= undefined){
+    if($stateParams.srchId == 'filterFromSearchRes'){      
+      if ($rootScope.filter) {
         $scope.doSortBiz();
-      }else{
-        $scope.doFiler('default');
+      } else {
+        $scope.doFilter('default');
       }
     }
   });
-  $scope.doFiler = function (type) {
+  $scope.doFilter = function (type) {
     if(type == 'nonDefault'){
       $rootScope.searchedBusinesses = $rootScope.displayBusinesses;
       console.log('nonDefault');
@@ -138,10 +139,10 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
   }
   $scope.doSortBiz = function () {
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
-      businessesService.filterBusinesses()
+      businessesService.filterBusinesses($rootScope.filter)
       .then(function (biz) {
           $rootScope.searchedBusinesses = biz.nodes;
-          $scope.doFiler('default');
+          $scope.doFilter('default');
           console.log($rootScope.searchedBusinesses)
           $rootScope.filter = undefined;
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
@@ -231,11 +232,44 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
     $rootScope.serverErrors = [];
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
     businessesService.searchedBusinessDetails($stateParams.bid).then(function (biz) {
-       $scope.bizClaim.business_name  = biz.nodes[0].node.title;
-       $scope.bizClaim.field_claimed_biz_node_id = biz.nodes[0].node.nid;
+      
+       $scope.bizClaim.created = Math.round(+new Date()/1000);
+       $scope.bizClaim.changed = Math.round(+new Date()/1000);
+      
+       $scope.bizClaim.title  = biz.nodes[0].node.title;
        $scope.bizClaim.uid = $rootScope.currentUser.uid;
-       $scope.bizClaim.type = 'obizr_backend';
-       $scope.bizClaim.bundle = 'claim_business';
+       $scope.bizClaim.type = 'claim_business';
+      
+      
+       $scope.bizClaim.field_ltc_biz_email = {};
+       $scope.bizClaim.field_user_nick_name = { };
+       $scope.bizClaim.field_ltc_user_telephone = {};
+       $scope.bizClaim.field_business_claimed = {};
+       $scope.bizClaim.field_claim_message = {};
+      
+      
+       $scope.bizClaim.field_ltc_biz_email.und = [];
+       $scope.bizClaim.field_user_nick_name.und = [];
+       $scope.bizClaim.field_ltc_user_telephone.und = [];
+       $scope.bizClaim.field_business_claimed.und = [];
+       $scope.bizClaim.field_claim_message.und = [];
+      
+      
+      
+       $scope.bizClaim.field_ltc_biz_email.und[0] = { };
+       $scope.bizClaim.field_user_nick_name.und[0] = { };
+       $scope.bizClaim.field_ltc_user_telephone.und[0] = { };
+       $scope.bizClaim.field_business_claimed.und[0] = { };
+       $scope.bizClaim.field_claim_message.und[0] = { };
+      
+      // prepopulated data
+
+       $scope.bizClaim.field_ltc_biz_email.und[0].value = $rootScope.currentUser.mail;
+       $scope.bizClaim.field_user_nick_name.und[0].value  = $rootScope.currentUser.field_user_nick_name.und[0].value;
+       $scope.bizClaim.field_ltc_user_telephone.und[0].value  = $rootScope.currentUser.field_mobile_user_telephone.und[0].value;
+       $scope.bizClaim.field_business_claimed.und[0].target_id  = biz.nodes[0].node.nid;
+       $scope.bizClaim.field_claim_message.und[0].value  = "";
+    
     }) .finally(function () { $rootScope.$broadcast('loading:hide');});
   });
   $scope.$on("$ionicView.beforeLeave", function(event, data){
@@ -243,17 +277,33 @@ OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHisto
   });
 
   $scope.doClaimBiz = function () {
-    $rootScope.serverErrors = [];
+       $rootScope.serverErrors = [];
     if($scope.bizClaim.field_are_you_the_legal_owner == undefined){
       $rootScope.serverErrors.push('Legal owner field is required.');
       return;
     }
-    if($scope.bizClaim.field_claim_instruc_for_our_team == undefined){
+    if( $scope.bizClaim.field_claim_message.und[0].value == undefined){
       $rootScope.serverErrors.push('Instruction is required.');
       return;
     }
-    else{
+    else {
+      
+      
+      $scope.bizClaim.field_user_nick_name.und[0].format = null;
+      
+      $scope.bizClaim.field_user_nick_name.und[0].safe_value = $scope.bizClaim.field_user_nick_name.und[0].value;
+      
+      $scope.bizClaim.field_claim_message.und[0].format = null;
+      
+      $scope.bizClaim.field_ltc_biz_email.und[0].email =  $scope.bizClaim.field_ltc_biz_email.und[0].value;
+      
+      $scope.bizClaim.field_claim_message.und[0].safe_value = $scope.bizClaim.field_claim_message.und[0].value;
+      
+      $scope.bizClaim.changed = Math.round(+new Date()/1000);
+      
+
       //TODO:request api to send mail or write code to mail.
+      
       console.log($scope.bizClaim);
       $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
       businessesService.claimBiz($scope.bizClaim).then(function (biz) {

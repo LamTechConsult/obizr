@@ -7,7 +7,7 @@
   </ion-nav-bar>
 
   <ion-content>
-    <div class="item item-avatar">
+    <div class="item item-avatar" ng-click="reviewerProfile(bs.uid)">
   	  <img ng-if="reviewsDetails.user.picture" ng-src="{{reviewsDetails.user.picture.url}}">
       <img ng-if="!reviewsDetails.user.picture" src="assets/img/user/default-avatar.png">
   	  <h2 ng-if="reviewsDetails.user.field_user_nick_name">{{reviewsDetails.user.field_user_nick_name.und[0].value}}</h2>
@@ -26,7 +26,7 @@
         <span am-time-ago="reviewsDetails.created" am-preprocess="unix"></span>
       </div>
     </div>
- 
+
     <div class="list">
       <div class="item item-body">
 	    <div>{{reviewsDetails.comment_body.und[0].value}}</div>

@@ -1,5 +1,5 @@
 <ion-view view-title="Map view">
-  <ion-header-bar class="bar bar-positive bar-header item-input-inset">
+  <ion-header-bar class="bar bar-positive bar-header item-input-inset"  ng-class="{noInternet:!isOffline}">
     <button class="button button-clear" ng-click="listBizView()">List</button>
       <label class="item-input-wrapper search-box">
         <i class="icon ion-ios-search placeholder-icon"></i>
@@ -9,7 +9,7 @@
   </ion-header-bar>
 
   <ion-content>
-    <div id="map-view" data-tap-disabled="true" ng-if="isOffline"></div>
-    <div class="item item-text-wrap error" ng-if="!isOffline">Oops!. No Internet connection. You are using this app in offline mode, connect your device from internet to use location service.</div>
+    <div id="map-view" data-tap-disabled="true" ng-if="!isOffline"></div>
+    <div class="item item-text-wrap error" ng-if="isOffline">Oops!. No Internet connection. You are using this app in offline mode, connect your device from internet to use location service.</div>
   </ion-content>
 </ion-view>

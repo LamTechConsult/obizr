@@ -283,14 +283,12 @@ OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$sta
           $rootScope.businessesReview = review;
           $scope.getBusinessesMap(bizDetail);
         });
-        console.log($rootScope.businessesDetails);
       }).finally(function () { $rootScope.$broadcast('loading:hide');});
     } 
   });
 
   ///////////////////// Show map on business detail page/////////////////////
   $scope.getBusinessesMap = function (bizDetail) {
-    console.log(bizDetail)
       var bizLatLng = new google.maps.LatLng(bizDetail.lat, bizDetail.long);
       var mapOptions = {
         zoom: 15,

@@ -1,5 +1,5 @@
 <ion-view view-title="Edit {{currentFieldName}}">
-   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:!isOffline}">
+   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
     <ion-nav-buttons side="left">
       <button class="button button-icon button-clear" ng-click="doCancel()">Cancel</button>
     </ion-nav-buttons>
@@ -56,7 +56,7 @@
       <label class="item item-input item-select">
         <div class="input-label">Chiefdom</div>
         <select ng-model="Chiefdom" ng-options="item.label for item in ChiefdomItem"></select>
-      </label>  
+      </label>
     </div>
 
     <div class="list" ng-switch-when="Email">

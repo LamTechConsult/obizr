@@ -2,7 +2,7 @@
   <ion-content class="padding text-center">
     <div class="logo padding2x"><img src="assets/img/splash_logo.png"/></div>
     <div class="row responsive-sm">
-      <div class="col" ng-if="!isOffline">
+      <div class="col" ng-if="isOffline">
         <div class="card" ng-if="serverErrors.length">
           <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
             {{serverError}}
@@ -14,7 +14,7 @@
         </div>
         <button class="button button-block button-calm" ng-click="iAgree()">OK, I Understand</button>
       </div>
-      <div class="col" ng-if="isOffline">
+      <div class="col" ng-if="!isOffline">
         <div class="map padding"><a href><img src="assets/img/map.png"/></a></div>
         <div class="padding">
           <p>OBizR uses your location to find nearby businesses and give you local recommendations.</p>

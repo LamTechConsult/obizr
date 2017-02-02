@@ -34,20 +34,20 @@
 
       <div class="item item-divider">Business Details</div>
        <label class="item item-input">
-        <input type="text" disabled="true" placeholder="Business Name" ng-model="bizClaim.business_name">
+        <input type="text" disabled="true" placeholder="Business Name" ng-model="bizClaim.title">
       </label>
 
        <div class="item item-divider">Your Information</div>
-       <label class="item item-input">
-        <input type="text" disabled="true" placeholder="Nick Name" ng-model="currentUser.field_user_nick_name.und[0].value">
+      <label class="item item-input">
+          <input type="text" disabled="true" placeholder="Nick Name" ng-model="bizClaim.field_user_nick_name.und[0].value">
       </label>
 
       <label class="item item-input">
-        <input type="text" disabled="true" placeholder="Phone" ng-model="currentUser.field_mobile_user_telephone.und[0].value">
+        <input type="text" disabled="true" placeholder="Phone" ng-model="bizClaim.field_ltc_user_telephone.und[0].value">
       </label>
 
       <label class="item item-input">
-        <input type="text" disabled="true" placeholder="Email" ng-model="currentUser.mail">
+        <input type="text" disabled="true" placeholder="Email" ng-model="bizClaim.field_ltc_biz_email.und[0].value">
       </label>
 
       <label class="item item-input">
@@ -55,7 +55,7 @@
       </label>
 
       <label class="item item-input">
-        <textarea rows="6" placeholder="Instruction for our team" ng-model="bizClaim.field_claim_instruc_for_our_team.und[0].value"></textarea>
+        <textarea rows="6" placeholder="Instruction for our team" ng-model="bizClaim.field_claim_message.und[0].value"></textarea>
       </label>
        
     </div>

@@ -36,7 +36,7 @@
 
     <div ng-switch-when="Address">
       <div class="list">
-        <div class="padding"><button class="button button-block button-assertive">Use my current location</button></div>
+        <div class="padding"><button class="button button-block button-calm"  ng-click="captureCurrentLocation('Address')">Use my current location</button></div>
         <label class="item item-input">
           <input type="text" placeholder="Example: 84 Kissy Road" ng-model="editBizData.field_ltc_biz_address.und[0].thoroughfare">
         </label>
@@ -54,39 +54,42 @@
           <input type="text" placeholder="Your company full name or DBA">
         </label>
         <div class="padding">
-     	  <button class="button button-block button-calm" ng-click="captureCurrentLocation()"><i class="ion-ios-location"></i> Use my current location</button>
+     	  <button class="button button-block button-calm" ng-click="captureCurrentLocation('Geocode')"><i class="ion-ios-location"></i> Use my current location</button>
      	  <button class="button button-block button-calm" ng-click="enterNewLocation()"><i class="ion-android-locate"></i>Use my new address</button>
+          <div class="list">
+         <label class="item item-input">
+           <input type="text" ng-model="bizLocation.street" placeholder="Street">
+         </label>
+
+         <label class="item item-input">
+           <input type="text" ng-model="bizLocation.city" placeholder="City">
+         </label>
+        </div>
         </div>
       </div>
     </div>
 
-    <div ng-switch-when="Chiefdom">
+
+    <div class="list" ng-switch-when="Chiefdom">
       <label class="item">
         <div class="padding-b2x">Select your province followed by district and chiefdom. This is important for ranking</div>
+
       </label>
-       <div class="list">
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Provience
-          </div>
-          <select ng-model="Provience" ng-options="item.label for item in ProvienceItem"></select>
-        </label>
+      <label class="item item-input item-select">
+        <div class="input-label">Provience</div>
+        <select ng-model="Provience" ng-options="item.location.name for item in ProvienceItem" ng-change="getDistrictItem(Provience)"></select>
+      </label>
 
-        <label class="item item-input item-select">
-          <div class="input-label">
-            District
-          </div>
-           <select ng-model="District" ng-options="item.label for item in DistrictItem"></select>
-
-        </label>
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Chiefdom
-          </div>
-           <select ng-model="Chiefdom" ng-options="item.label for item in ChiefdomItem"></select>
-        </label>
-      </div>
+      <label class="item item-input item-select">
+        <div class="input-label">District</div>
+        <select ng-model="District" ng-change="getChiefdomItem(District)" ng-options="item.district.name for item in DistrictItem"></select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">Chiefdom</div>
+        <select ng-model="Chiefdom" ng-options="item.location.name for item in ChiefdomItem"></select>
+      </label>
     </div>
+    
     <div ng-switch-when="Email">
       <div class="list">
         <label class="item item-input">

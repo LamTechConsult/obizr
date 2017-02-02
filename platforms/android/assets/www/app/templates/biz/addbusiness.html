@@ -59,9 +59,9 @@
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Geocode')">
         <i class="icon ion-ios-arrow-right icon-small"></i>
-        <span class="item-note" ng-if="field_ltc_biz_address_geo.thoroughfare == undefined">Insert value</span>
-        <span class="item-note" ng-if="field_ltc_biz_address_geo.thoroughfare">
-        {{field_ltc_biz_address_geo.thoroughfare}},{{field_ltc_biz_address_geo.locality}}</span>
+        <span class="item-note" ng-if="newBizData.field_ltc_biz_address_geo.thoroughfare == undefined">Insert value</span>
+        <span class="item-note" ng-if="newBizData.field_ltc_biz_address_geo.thoroughfare">
+        {{newBizData.field_ltc_biz_address_geo.thoroughfare}},{{newBizData.field_ltc_biz_address_geo.locality}}</span>
         Map your business Location*
       </a>
       <a class="item item-icon-right" ng-click="setBizValFor('Email')">

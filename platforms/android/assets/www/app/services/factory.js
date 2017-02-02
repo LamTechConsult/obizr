@@ -34,7 +34,8 @@ OBizR.factory('customPostService', function($http,$filter,DrupalApiConstant) {
   var header = {"Content-Type": "application/json"};
   
   //fetch About page
-  customPostService.postClaimBusiness = function(bizData) {
+  customPostService.postClaimBusiness = function (bizData) {
+    console.log(bizData);
     bizData.created = created;
     bizData.created = updated;
     url = basePath + "entity_obizr_backend";

@@ -186,3 +186,18 @@ OBizR.filter('customBizFilter', function() {
     return filterRes;
   }
 });
+
+
+// Setup custom business filter
+OBizR.filter('openNowFilter', function() {
+
+  // Create the return function
+  return function(bs) {
+    console.log(bs);
+
+    // var hours = bs.node.hours;
+    // if (hours.indexOf("closed") > -1) return "closed:;
+    // else return true;
+    // return bs;
+  }
+});

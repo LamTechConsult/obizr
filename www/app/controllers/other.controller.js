@@ -110,8 +110,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
           console.log($rootScope.searchedBusinesses);
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     }
-    console.log($rootScope.filter);
-    console.log($stateParams.srchId);
+    
     if($stateParams.srchId == 'filterFromNearby'){
 
       if ($rootScope.filter) {

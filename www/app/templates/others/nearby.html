@@ -12,7 +12,7 @@
   <ion-content>
     <ion-refresher  pulling-text="Refresh..." on-refresh="doRefresh()"> </ion-refresher>
     <ion-list class="biz-list">
-      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in displayBusinesses |limitTo:more | filter:searchText" ng-click="businessDetails(bs.node.nid)">
+      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in displayBusinesses |limitTo:more | filter:searchText | filter:openNowFilter" ng-click="businessDetails(bs.node.nid)">
         <img ng-if="bs.node.image.src && !isOffline" ng-src="{{bs.node.image.src}}" alt="{{bs.node.image.alt}}">
         <img ng-if="!bs.node.image.src || isOffline" src="assets/img/fullsize_biz.png">
 	    <h2>{{bs.node.title}}</h2>

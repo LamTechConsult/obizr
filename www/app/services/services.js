@@ -726,9 +726,10 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 	 * Get active business from offline data.
 	 */
 	function getBusinesses(forceUpdate) {
-			
 		var defer = $q.defer();
-		if(!$rootScope.isOffline){
+		
+		if($rootScope.isOffline){
+			console.log('fetching offline businesses ...');
 			OfflineDataService.fetchBusinesses().success(function (data) {
 				saveBizDistance(data,'getBusinesses');
 			       
@@ -738,6 +739,7 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 		    });
 		}
 		else if (businesses == null || forceUpdate) {
+			console.log('fetching online businesses ...');
 
 			DataService.fetchBusinesses().success(function (data) {
 		       //businesses = data;
@@ -886,8 +888,10 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 	 * Filter businesse from backend.
 	 */
 	function filterBusinesses(filterData){
-		console.log(filterData);
 		var defer = $q.defer();
+		
+		
+		if(filterData === {} || !filterData) return defer.reject("filter data is empty ...");
 
 			DataService.fetchFilteredBusinesses(filterData).success(function (data) {
 		        //filteredBiz = data;

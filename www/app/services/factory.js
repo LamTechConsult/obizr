@@ -238,7 +238,8 @@ OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConst
   //query search business
   dataService.fetchFilteredBusinesses = function (filterData) { 
     
-
+    delete filterData.openNow;
+    
     if (filterData.distance) {
       filterData.sort_by = "field_geofield_distance";
     } else if (filterData.reviews) {
@@ -253,13 +254,20 @@ OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConst
       filterData.claimed = 0;
     }
 
+    if(filterData.claimed == 0) delete filterData.claimed;
+
+    if(filterData == {}){
+      console.log('empty');
+      console.log(filterData);return;
+    }
+
     console.log(filterData);
 
     url = basePath + "slbiz/search.json" 
     if (!angular.equals({}, filterData)) {
       url += "?" + $httpParamSerializer(filterData)
     }      
-    console.log(url);
+
     return $http.get(url,config);
   }
 

@@ -113,17 +113,22 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
     
     if($stateParams.srchId == 'filterFromNearby'){
 
-      if ($rootScope.filter) {
+      if ($rootScope.filter === {}) {
+        $scope.doFilter('nonDefault');
+      }else if($rootScope.filter){
         $scope.doSortBiz();
-      } else {
+      }else {
         $scope.doFilter('nonDefault');
       }
     }
     if($stateParams.srchId == 'filterFromSearchRes'){      
-      if ($rootScope.filter) {
+     
+      if ($rootScope.filter === {}) {
+        $scope.doFilter('nonDefault');
+      }else if($rootScope.filter){
         $scope.doSortBiz();
-      } else {
-        $scope.doFilter('default');
+      }else {
+        $scope.doFilter('nonDefault');
       }
     }
   });

@@ -550,7 +550,7 @@ OBizR.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeoloc
   $ionicHistory.clearHistory(); //hide the back button.
     if(!$localStorage.biz){
       $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
-      businessesService.getBusinesses(false).then(function (biz) {
+      businessesService.getBusinesses(true).then(function (biz) {
         $localStorage.biz = biz.nodes;
         $rootScope.displayBusinesses = $localStorage.biz;
       }).finally(function () { $rootScope.$broadcast('loading:hide'); });
@@ -578,6 +578,7 @@ OBizR.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeoloc
   }
   $scope.doRefresh = function() {
     businessesService.getBusinesses(true).then(function (biz) {
+      console.log('businesses');console.log(biz);
        $localStorage.biz = biz.nodes;
     }).finally(function() {
        // Stop the ion-refresher from spinning

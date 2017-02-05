@@ -12,7 +12,7 @@
     <ion-list class="biz-list">
       <!-- <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in searchedBusinesses | limitTo:30" ng-click="businessDetails(bs.node.nid)"> -->
       <div ng-if="searchedBusinesses.length==0">No result found.</div>
-      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in searchedBusinesses | limitTo:more | orderBy : node.distance : reverse"  ng-click="businessDetails(bs.node.nid)">
+      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in searchedBusinesses | limitTo:more |orderBy : node.distance"  ng-click="businessDetails(bs.node.nid)">
         <img ng-if="bs.node.image.src" ng-src="{{bs.node.image.src}}" alt="{{bs.node.image.alt}}">
         <img ng-if="!bs.node.image.src" src="assets/img/fullsize_biz.png">
 	    <h2>{{bs.node.title}}</h2>

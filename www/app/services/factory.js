@@ -267,6 +267,7 @@ OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConst
     if (!angular.equals({}, filterData)) {
       url += "?" + $httpParamSerializer(filterData)
     }      
+    console.log(url);
 
     return $http.get(url,config);
   }

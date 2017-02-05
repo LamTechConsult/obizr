@@ -14,7 +14,7 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
    //        $rootScope.keywords = keywords;
    //    }) .finally(function () { $rootScope.$broadcast('loading:hide');}); 
     $scope.initializeFilterData();
-    console.log($ionicHistory.backView());//get from state name
+   $ionicHistory.backView();//get from state name
   });
   
   $scope.setFilterValFor = function (caseStr) {

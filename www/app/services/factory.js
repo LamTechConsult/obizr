@@ -158,7 +158,7 @@ OBizR.factory('StaticPageService', function($http,DrupalApiConstant) {
 /**
  * DataService :
  */
-OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConstant) {
+OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,DrupalApiConstant) {
   var dataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {};
@@ -237,15 +237,19 @@ OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConst
   }
   //query search business
   dataService.fetchFilteredBusinesses = function (filterData) { 
-    
-    delete filterData.openNow;
+
+    var defer = $q.defer();
+
     
     if (filterData.distance) {
       filterData.sort_by = "field_geofield_distance";
+      $rootScope.sort_param = "bs.node.distance";
     } else if (filterData.reviews) {
       filterData.sort_by = "comment_count";
+      $rootScope.sort_param = "bs.node.reviewcount";
     } else if (filterData.ratings) {
       filterData.sort_by = "field_ltc_biz_rating_rating";
+      $rootScope.sort_param = "bs.node.ratings";
     }
 
     if (filterData.claimed === true) {
@@ -255,13 +259,13 @@ OBizR.factory('DataService', function($http,$httpParamSerializer, DrupalApiConst
     }
 
     if(filterData.claimed == 0) delete filterData.claimed;
-
-    if(filterData == {}){
-      console.log('empty');
-      console.log(filterData);return;
-    }
-
+    
     console.log(filterData);
+
+
+    if(angular.equals( filterData, {}) ){
+      return $http.get(url,config);
+    }
 
     url = basePath + "slbiz/search.json" 
     if (!angular.equals({}, filterData)) {

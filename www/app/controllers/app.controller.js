@@ -558,6 +558,7 @@ OBizR.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeoloc
     $scope.initializeData();
   });
   $scope.initializeData = function () {
+    
     if($scope.more){
       return;
     }
@@ -819,6 +820,7 @@ OBizR.controller('LoginCtrl',function($scope,$rootScope,$window,$cordovaGeolocat
         },
         //error
         function (errorResult) {
+          console.log(errorResult);
           if (errorResult.status >= 400 && errorResult.status < 500) {
             $scope.serverErrors.push(errorResult.data[0]);
             console.log(errorResult);

@@ -30,11 +30,6 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   $scope.initializeFilterData = function () {
     if($rootScope.filter == undefined){
       $rootScope.filter = {};
-      // //$rootScope.filter.openNow = true;
-      // $rootScope.filter.claimed = true;
-      // $rootScope.filter.distance = undefined;
-      // $rootScope.filter.reviews = undefined;
-      // $rootScope.filter.ratings = undefined;
     }
   }
   /////////////////////Autocomplete fuctionality///////////////////////////////
@@ -148,7 +143,6 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
           $rootScope.searchedBusinesses = biz.nodes;
           $scope.doFilter('default');
           console.log($rootScope.searchedBusinesses)
-          $rootScope.filter = undefined;
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
   }
   $scope.businessDetails = function (bid) {

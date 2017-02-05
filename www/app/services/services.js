@@ -889,15 +889,20 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 	 */
 	function filterBusinesses(filterData){
 		var defer = $q.defer();
+
+		if(filterData.openNow) $rootScope.open_now = true;
+		else $rootScope.open_now = false; 
 		
+    	delete filterData.openNow;
 		
-		if(filterData === {} || !filterData) return defer.reject("filter data is empty ...");
+		if(angular.equals( filterData, {})) return defer.reject("filter data is empty ...");
 
 			DataService.fetchFilteredBusinesses(filterData).success(function (data) {
 		        //filteredBiz = data;
 		        saveBizDistanceFilter(data,filterData);
 		        defer.resolve(filteredBiz);
 		    }).catch(function (error) {
+				console.log('errored');
 		        defer.reject(error);
 		    });
         return defer.promise;

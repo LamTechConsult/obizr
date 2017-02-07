@@ -1,22 +1,22 @@
 {
 	"districts": [{
 		"district": {
-			"name": "Bo District",
+			"name": "Bo",
 			"id": "109"
 		}
 	}, {
 		"district": {
-			"name": "Bonthe District",
+			"name": "Bonthe",
 			"id": "125"
 		}
 	}, {
 		"district": {
-			"name": "Moyamba District",
+			"name": "Moyamba",
 			"id": "137"
 		}
 	}, {
 		"district": {
-			"name": "Pujehun District",
+			"name": "Pujehun",
 			"id": "152"
 		}
 	}, {

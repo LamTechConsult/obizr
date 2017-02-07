@@ -1,5 +1,6 @@
 <ion-view view-title="Edit {{currentFieldName}}">
-   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+   <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
     <ion-nav-buttons side="left">
       <button class="button button-icon button-clear" ng-click="doCancel()">Cancel</button>
     </ion-nav-buttons>

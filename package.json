@@ -23,22 +23,18 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
-    "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-camera",
-    "cordova-plugin-contacts",
     "cordova-plugin-file",
-    "cordova-plugin-media",
-    "cordova-plugin-media-capture",
     "cordova-plugin-network-information",
-    "cordova-plugin-vibration",
     "cordova-plugin-geolocation",
-    "cordova-plugin-console",
-    "com.ionic.keyboard",
     "cordova-plugin-x-toast",
-    "cordova-plugin-compat"
+    "cordova-plugin-compat",
+    "cordova-plugin-console",
+    "cordova-plugin-datepicker",
+    "com.ionic.keyboard"
   ],
   "cordovaPlatforms": []
 }

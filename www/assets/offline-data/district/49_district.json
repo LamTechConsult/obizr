@@ -1,27 +1,27 @@
 {
 	"districts": [{
 		"district": {
-			"name": "Bombali District",
+			"name": "Bombali",
 			"id": "50"
 		}
 	}, {
 		"district": {
-			"name": "Kambia District",
+			"name": "Kambia",
 			"id": "64"
 		}
 	}, {
 		"district": {
-			"name": "Koinadugu District",
+			"name": "Koinadugu",
 			"id": "72"
 		}
 	}, {
 		"district": {
-			"name": "Port Loko District",
+			"name": "Port Loko",
 			"id": "84"
 		}
 	}, {
 		"district": {
-			"name": "Tonkolili District",
+			"name": "Tonkolili",
 			"id": "96"
 		}
 	}, {

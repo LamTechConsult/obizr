@@ -5,7 +5,7 @@
 			"nid": "6,039",
 			"name": "Education",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/education-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/education-app-icon.png",
 				"alt": "Education Category"
 			}
 		}
@@ -13,10 +13,10 @@
 		"node": {
 			"categoryid": "206",
 			"nid": "1,729",
-			"name": "Healthcare & Medical",
+			"name": "Healthcare and Medical",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/health-app-icon.png",
-				"alt": "Healthcare & Medical"
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/health-app-icon.png",
+				"alt": "Healthcare and Medical"
 			}
 		}
 	}, {
@@ -25,7 +25,7 @@
 			"nid": "1,174",
 			"name": "NGO and Government",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/public-service-app-icon_0.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/public-service-app-icon_0.png",
 				"alt": "NGO and Government"
 			}
 		}
@@ -33,9 +33,9 @@
 		"node": {
 			"categoryid": "208",
 			"nid": "363",
-			"name": "Hotel, Tourism and Travel",
+			"name": "Travel and Tourism",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/tourism-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/tourism-app-icon.png",
 				"alt": "Hotels, Tourism and Travel"
 			}
 		}
@@ -43,9 +43,9 @@
 		"node": {
 			"categoryid": "218",
 			"nid": "158",
-			"name": "Restaurant & Food",
+			"name": "Restaurant and Food",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/restaurant-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/restaurant-app-icon.png",
 				"alt": "Restaurant & Food"
 			}
 		}
@@ -55,7 +55,7 @@
 			"nid": "48",
 			"name": "Financial Service",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/finance-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/finance-app-icon.png",
 				"alt": "Financial Services"
 			}
 		}
@@ -65,7 +65,7 @@
 			"nid": "33",
 			"name": "Shopping",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/shopping-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/shopping-app-icon.png",
 				"alt": "Shopping"
 			}
 		}
@@ -75,7 +75,7 @@
 			"nid": "20",
 			"name": "Local Service",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/business-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/business-app-icon.png",
 				"alt": "Local Services"
 			}
 		}
@@ -85,8 +85,8 @@
 			"nid": "16",
 			"name": "Arts & Entertainment",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/arts-entertainment-app-icon.png",
-				"alt": "Arts & Entertainment"
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/arts-entertainment-app-icon.png",
+				"alt": "Arts and Entertainment"
 			}
 		}
 	}, {
@@ -95,7 +95,7 @@
 			"nid": "14",
 			"name": "Mass Media and Publishing",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/media-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/media-app-icon.png",
 				"alt": "Mass Media and Publishing"
 			}
 		}
@@ -105,7 +105,7 @@
 			"nid": "9",
 			"name": "Professional Service",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/public-service-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/public-service-app-icon.png",
 				"alt": "Professional Service"
 			}
 		}
@@ -113,9 +113,9 @@
 		"node": {
 			"categoryid": "201",
 			"nid": "6",
-			"name": "Beauty & Spa",
+			"name": "Beauty and Spa",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/beauty-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/beauty-app-icon.png",
 				"alt": "Beauty & Spas"
 			}
 		}
@@ -123,9 +123,9 @@
 		"node": {
 			"categoryid": "200",
 			"nid": "2",
-			"name": "Active Life & Sport",
+			"name": "Active Life and Sport",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/activelife-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/activelife-app-icon.png",
 				"alt": "Active Life & Sport"
 			}
 		}
@@ -135,7 +135,7 @@
 			"nid": "2",
 			"name": "Automotive",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/automotive-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/automotive-app-icon.png",
 				"alt": "Automotive"
 			}
 		}
@@ -145,7 +145,7 @@
 			"nid": "1",
 			"name": "Housing and Real Estate",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/housing-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/housing-app-icon.png",
 				"alt": "Housing and Real Estate"
 			}
 		}
@@ -153,9 +153,9 @@
 		"node": {
 			"categoryid": "203",
 			"nid": "0",
-			"name": "Event Planning & Service",
+			"name": "Event Planning and Service",
 			"icon": {
-				"src": "http://obizr.io/sites/default/files/image/category/icon/mobile/ngo-app-icon.png",
+				"src": "http://slbr.sl/sites/default/files/image/category/icon/mobile/ngo-app-icon.png",
 				"alt": "Event Planning & Services"
 			}
 		}

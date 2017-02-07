@@ -1,5 +1,6 @@
 <ion-view view-title="Set Location">
-  <ion-nav-bar class="bar-positive">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+   <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
   </ion-nav-bar>
 
@@ -9,13 +10,13 @@
         {{serverError}}
       </div>
     </div>
-    <div ng-if="isOffline">
+    <div ng-if="!isOffline">
       <div class="item item-text-wrap error">Oops!. No Internet connection. You are using this app in offline mode, connect your device from internet to use location service.</div>
     </div>
-    <div ng-if="!isOffline">
+    <div ng-if="isOffline">
       <div class="padding">
       <button class="button button-block button-calm" ng-click="captureCurrentLocation()"><i class="ion-ios-location"></i> Use my current location</button>
-      <button class="button button-block button-calm" ng-click="enterNewLocation()"><i class="ion-android-locate"></i>Use my new address</button>
+      <button class="button button-block button-calm" ng-click="enterNewLocation()"><i class="ion-android-locate"></i> Use my new address</button>
       </div>
 
       <!--Assumed location fields value -->

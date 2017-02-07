@@ -1,5 +1,6 @@
-<ion-view view-title="Claim Business">
-   <ion-nav-bar class="bar-positive">
+<ion-view view-title="Claim business">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+  <ion-nav-bar class="bar bar-positive bar-header item-input-inset" ng-class="{noInternet:!isOffline}">
      <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-buttons side="right">
       <button class="button button-icon button-clear" ng-click="doClaimBiz()">Done</button>
@@ -57,7 +58,7 @@
       <label class="item item-input">
         <textarea rows="6" placeholder="Instruction for our team" ng-model="bizClaim.field_claim_message.und[0].value"></textarea>
       </label>
-       
+
     </div>
   </ion-content>
 </ion-view>

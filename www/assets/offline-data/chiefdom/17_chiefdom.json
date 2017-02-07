@@ -1,83 +1,100 @@
 {
-	"locations": [{
-		"location": {
-			"name": "Dama",
-			"id": "18"
-		}
-	}, {
-		"location": {
-			"name": "Dodo",
-			"id": "19"
-		}
-	}, {
-		"location": {
-			"name": "Gaura",
-			"id": "20"
-		}
-	}, {
-		"location": {
-			"name": "Gorama Mende",
-			"id": "21"
-		}
-	}, {
-		"location": {
-			"name": "Kando Leppeama",
-			"id": "22"
-		}
-	}, {
-		"location": {
-			"name": "Koya",
-			"id": "23"
-		}
-	}, {
-		"location": {
-			"name": "Langrama",
-			"id": "24"
-		}
-	}, {
-		"location": {
-			"name": "Lower Bambara",
-			"id": "25"
-		}
-	}, {
-		"location": {
-			"name": "Malegohun",
-			"id": "26"
-		}
-	}, {
-		"location": {
-			"name": "Niawa",
-			"id": "27"
-		}
-	}, {
-		"location": {
-			"name": "Nomo",
-			"id": "28"
-		}
-	}, {
-		"location": {
-			"name": "Nongowa",
-			"id": "29"
-		}
-	}, {
-		"location": {
-			"name": "Simbaru",
-			"id": "30"
-		}
-	}, {
-		"location": {
-			"name": "Small Bo",
-			"id": "31"
-		}
-	}, {
-		"location": {
-			"name": "Tunkia",
-			"id": "32"
-		}
-	}, {
-		"location": {
-			"name": "Wandor",
-			"id": "33"
-		}
-	}]
+  "locations" : [
+    {
+      "location" : {
+        "name" : "Giema",
+        "id" : "18"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Dodo",
+        "id" : "19"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Joru",
+        "id" : "20"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Tungie",
+        "id" : "21"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Gbado",
+        "id" : "22"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Baoma",
+        "id" : "23"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Ya Baima",
+        "id" : "24"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Panguma",
+        "id" : "25"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Sembehun",
+        "id" : "26"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Sundumei",
+        "id" : "27"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Faama",
+        "id" : "28"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Kenema",
+        "id" : "29"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Boajibu",
+        "id" : "30"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Blama",
+        "id" : "31"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Gorahun",
+        "id" : "32"
+      }
+    },
+    {
+      "location" : {
+        "name" : "Faala",
+        "id" : "33"
+      }
+    }
+  ]
 }

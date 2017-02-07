@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.obizr.obizrsl" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.obizr.obizrsl" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>OBizR</name>
     <description>
     OBizR Sierra Leone - location-based business reviews and travel guide application. Use OBizR to quickly find top rated businesses nearby and write reviews about them. OBizR is your local guide to finding the best places to eat, shop, drink, sleep, relax and play
   </description>
-    <author email="developer@obizr.com" href="http://obizr.io/">
+    <author email="developer@obizr.com" href="http://slbr.sl/">
     LAMTECH Consulting Enterprises
   </author>
     <content src="index.html" />
@@ -15,7 +15,7 @@
     <access launch-external="yes" origin="sms:*" />
     <access launch-external="yes" origin="http://*/*" />
     <access launch-external="yes" origin="https://*/*" />
-    <allow-navigation href="*://*.obizr.io/*" />
+    <allow-navigation href="*://*.slbr.sl/*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -92,7 +92,6 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
-    <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
     <plugin name="cordova-plugin-camera" spec="~2.1.0" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />

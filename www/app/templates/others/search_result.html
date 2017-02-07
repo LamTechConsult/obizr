@@ -1,5 +1,6 @@
 <ion-view view-title="Search Result">
-    <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+   <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
     <ion-nav-buttons side="left">
       <button class="button button-clear" ng-click="getMapView()">Map</button>
     </ion-nav-buttons>

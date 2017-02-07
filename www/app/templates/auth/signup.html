@@ -1,5 +1,6 @@
 <ion-view view-title="Sign Up">
-  <ion-nav-bar class="bar-positive" ng-class="{noInternet:isOffline}">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+  <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-buttons side="right">
       <button class="button button-clear button-icon" ng-click="skipAuthorization()">Skip</button>
@@ -12,8 +13,9 @@
         {{serverError}}
       </div>
     </div>
+    <div class="row responsive-sm text-center isOffline" ng-if="!isOffline">YOU ARE OFFLINE! SIGN UP IS NOT REQUIRED </div>
 
-    <div class="row responsive-sm text-center">
+    <div class="row responsive-sm text-center" ng-if="isOffline">
       <div class="col">
         <form name="signupForm" ng-submit="doSignup(signupForm)" novalidate>
           <div class="list material">

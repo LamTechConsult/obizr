@@ -1,5 +1,6 @@
 <ion-view view-title="Find a business">
-   <ion-nav-bar class="bar-positive"  ng-class="{noInternet:isOffline}">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+   <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
   </ion-nav-bar>
 
@@ -7,7 +8,7 @@
     <div class="list list-inset biz-search-form-list">
       <label class="item item-input">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Search by business name" ng-model="searchData.name"/>
+        <input type="search" placeholder="Enter a business name" ng-model="searchData.name"/>
       </label>
 
       <!--<label class="item item-input">

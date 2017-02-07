@@ -13,12 +13,13 @@
           <p>OBizR uses your location to find nearby businesses and give you local recommendations.</p>
         </div>
         <button class="button button-block button-calm" ng-click="iAgree()">OK, I Understand</button>
+        <!--<button class="button button-block button-calm" ng-click="ContinueOfflineMode()">OK, I Understand</button>-->
       </div>
       <div class="col" ng-if="!isOffline">
         <div class="map padding"><a href><img src="assets/img/map.png"/></a></div>
         <div class="padding">
           <p>OBizR uses your location to find nearby businesses and give you local recommendations.</p>
-          <p>Oops!. No internet conection.</p>
+          <p>OOPS!. YOU ARE OFFLINE!</p>
         </div>
         <button class="button button-block button-calm" ng-click="ContinueOfflineMode()">OK, Continue Offline</button>
       </div>

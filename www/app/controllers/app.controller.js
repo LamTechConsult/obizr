@@ -677,6 +677,13 @@ OBizR.controller('AccountCtrl', function($scope,AuthenticationService,$localStor
       console.log(data);
     }).finally(function () { $rootScope.$broadcast('loading:hide');});
   }
+  $scope.myReviews = function () {
+    $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
+    myAccountService.getMyReviews($rootScope.currentUser.uid).then(function (data) {
+      $rootScope.myReviews = data.nodes;
+      console.log(data);
+    }).finally(function () { $rootScope.$broadcast('loading:hide');});
+  }
   $scope.showMyDetails = function (fid) {
     console.log();
   }

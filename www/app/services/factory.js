@@ -188,6 +188,12 @@ OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,D
     url = basePath + "slbiz/user/my-bookmarks.json";
     return $http.get(url,config);
   }
+  
+  //fetchMyReveiwers
+  dataService.fetchMyReviews = function(uid) {
+    url = basePath + "slbiz/user/"+uid+"/reviews.json";
+    return $http.get(url,config);
+  }
 
   //fetBusinesses
   dataService.fetchBusinesses = function() {

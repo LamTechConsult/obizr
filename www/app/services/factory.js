@@ -199,13 +199,13 @@ OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,D
     url = basePath + "slbiz/app-category-home.json";
     Localurl = "assets/offline-data/app-category-home.json";
     console.log(url);
-    return $http.get(Localurl,config);
+    return $http.get(url,config);
   }
   //fetchcategory
   dataService.fetchKeywords = function() {
     url = basePath + "slbiz/filter/keywords.json";
     Localurl = "assets/offline-data/keywords.json";
-    return $http.get(Localurl,config);
+    return $http.get(url,config);
   }
   //fetch Provience from backend
   dataService.fetchProvience = function() {

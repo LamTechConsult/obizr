@@ -79,7 +79,7 @@
       </label>
       <label class="item item-input item-select">
         <div class="input-label">Provience</div>
-        <select ng-model="Provience" ng-options="item.location.name for item in ProvienceItem" ng-change="getDistrictItem(Provience)"></select>
+        <select ng-model="Provience"ng-change="getDistrictItem(Provience)" ng-options="item.location.name for item in ProvienceItem"></select>
       </label>
 
       <label class="item item-input item-select">
@@ -88,7 +88,7 @@
       </label>
       <label class="item item-input item-select">
         <div class="input-label">Chiefdom</div>
-        <select ng-model="Chiefdom" ng-options="item.location.name for item in ChiefdomItem"></select>
+        <select ng-model="Chiefdom" ng-options="item.location.name for item in ChiefdomItem" ng-change="setChiefdom(Chiefdom)"></select>
       </label>
     </div>
 

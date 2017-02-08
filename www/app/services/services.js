@@ -693,9 +693,9 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 		if($rootScope.lastFetchedBizRev != bid){
 			NodeResource.comments({nid: bid}).success(function (data) {
 				reviews = data;	 
-			    //console.log(data.length);
 			    if (reviews.length != 0) {
-	            	prepareReviews(data);
+					prepareReviews(data);
+					console.log('reviews ..');
 	            	console.log(reviews);
 	          	}
 			    defer.resolve(reviews);

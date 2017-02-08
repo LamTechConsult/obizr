@@ -13,7 +13,8 @@
       <ion-item>
 	    <h2>{{businessesDetails.title}}</h2>
 	    <div class="biz-ratings {{businessesDetails.ratings | ratingClass}}">
-		  <span class="rating-numbers">{{businessesDetails.ratings | rating}}/5</span><div class="star-rating"><span style="width:{{businessesDetails.ratings}}"></span></div> {{businessesDetails.reviewcount}} Reviews
+		  <span class="rating-numbers">{{businessesDetails.ratings | rating}}/5</span><div class="star-rating"><span 
+      style="width:{{businessesDetails.ratings}}"></span></div> {{businessesDetails.reviewcount}} Reviews
         </div>
         <div class="biz-category"><span>{{businessesDetails.keywords}}</span><!--<span>{{businessesDetails.category}}</span>--></div>
         <div class="biz-hours">Hours Today{{businessesDetails.hours | getTimeFormat}}</div>
@@ -109,7 +110,11 @@
     <div class="recommended-reviews"  ng-hide="showMoreDetails">
 	    <h5 class="obizrbg light padding m-none">Recommended Reviews</h5>
 	    <div class="padding text-center" ng-if="!businessesReview.length">
-      <ion-spinner icon="spiral"></ion-spinner></div>
+          <ion-spinner icon="spiral"></ion-spinner>
+      </div>
+	    <div class="padding text-center" ng-if="businessesReview.length == 0">
+        No reviews yet
+      </div>
       <ion-list class="biz-list">
         <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in businessesReview">
           <img ng-if="bs.field_ltc_biz_photos.und" ng-src="{{bs.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(bs.uid)">

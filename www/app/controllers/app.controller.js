@@ -250,8 +250,8 @@ OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$sta
         bizDetail.long = $rootScope.businessesDetails.long;
         bizDetail.title = $rootScope.businessesDetails.title;
         
-        businessesService.getBusinessesReview($stateParams.bid).then(function(review) {
-          $rootScope.businessesReview = review;
+        businessesService.getBusinessesReview($stateParams.bid).then(function(reviews) {
+          $rootScope.businessesReview = reviews;
           $scope.getBusinessesMap(bizDetail);
         });
       }).finally(function () { $rootScope.$broadcast('loading:hide');});

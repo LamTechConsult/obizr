@@ -46,18 +46,22 @@
     <div class="recommended-reviews"  ng-hide="showMoreDetails">
       <h5 class="obizrbg light padding m-none">Recent Reviews by
       {{reviewerProfile.field_user_nick_name.und[0].value}}</h5>
-      <div class="padding text-center" ng-if="!businessesReview.length">
-      <ion-spinner icon="spiral"></ion-spinner></div>
+       <div class="padding text-center" ng-if="!businessesReview.length">
+          <ion-spinner icon="spiral"></ion-spinner>
+      </div>
+	    <div class="padding text-center" ng-if="businessesReview.length == 0">
+        No reviews yet
+      </div>
       <ion-list class="biz-list">
         <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in businessesReview">
           <img ng-if="bs.field_ltc_biz_photos.und" ng-src="{{bs.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(bs.uid)">
           <img ng-if="!bs.field_ltc_biz_photos.und" src="assets/img/fullsize_biz.png" ng-click="reviewerProfile(bs.uid)">
-          <h4>{{bs.subject}}</h4>
-          <div class="biz-ratings {{bs.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerProfile(bs.cid)">
+          <h4  ng-click="reviewerDetails(bs.cid)">{{bs.subject}}</h4>
+          <div class="biz-ratings {{bs.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerDetails(bs.cid)">
             <span class="rating-numbers">{{bs.field_ltc_biz_rating.und[0].rating | rating}}/5</span><div class="star-rating"><span style="width:{{bs.field_ltc_biz_rating.und[0].rating | ratingPercentage}}"></span></div> <span am-time-ago="bs.created" am-preprocess="unix"></span>
           </div>
-          <p>{{bs.comment_body.und[0]['value']}}</p>
-          <i class="icon ion-ios-arrow-right icon-small"></i>
+          <p ng-click="reviewerDetails(bs.cid)">{{bs.comment_body.und[0]['value']}}</p>
+          <i class="icon ion-ios-arrow-right icon-small" ng-click="reviewerDetails(bs.cid)"></i>
         </ion-item>
       </ion-list>
     </div>

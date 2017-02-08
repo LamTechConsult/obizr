@@ -123,6 +123,14 @@ OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$root
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     } 
   });
+  
+  $scope.reviewerDetails = function (rid) {
+    console.log(rid);
+    $state.go('app.reviewDetails',{cid:rid});
+  }
+  $scope.reviewerProfile = function(uid){
+    $state.go('app.reviewerProfile',{uid:uid});
+  }
  
 });
 
@@ -291,9 +299,6 @@ OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$sta
   $scope.reviewerDetails = function (rid) {
     console.log(rid);
     $state.go('app.reviewDetails',{rid:rid});
-  }
-  $scope.reviewerProfile = function(uid){
-    $state.go('app.reviewerProfile',{uid:uid});
   }
   $scope.reviewerProfile = function(uid){
     $state.go('app.reviewerProfile',{uid:uid});
@@ -712,6 +717,14 @@ OBizR.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,busi
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     } 
   });
+  
+  $scope.reviewerDetails = function (rid) {
+    console.log(rid);
+    $state.go('app.reviewDetails',{rid:rid});
+  }
+  $scope.reviewerProfile = function(uid){
+    $state.go('app.reviewerProfile',{uid:uid});
+  }
 });
 
 OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionicHistory,$localStorage,$state,AuthenticationServiceConstant, AuthenticationService) {

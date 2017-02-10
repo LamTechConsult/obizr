@@ -161,7 +161,9 @@ OBizR.factory('StaticPageService', function($http,DrupalApiConstant) {
 OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,DrupalApiConstant) {
   var dataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
-  var config = {};
+  var config = {
+   
+  };
  
   //fetchMyFriends
   dataService.fetchMyFriends = function(uid) {
@@ -191,7 +193,8 @@ OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,D
   
   //fetchMyReveiwers
   dataService.fetchMyReviews = function(uid) {
-    url = basePath + "slbiz/user/"+uid+"/reviews.json";
+    url = basePath + "slbiz/user/" + uid + "/reviews.json";
+    console.log(url);
     return $http.get(url,config);
   }
 

@@ -682,7 +682,12 @@ OBizR.controller('AccountCtrl', function($scope,AuthenticationService,$localStor
     myAccountService.getMyReviews($rootScope.currentUser.uid).then(function (data) {
       $rootScope.myReviews = data.nodes;
       console.log(data);
+   
     }).finally(function () { $rootScope.$broadcast('loading:hide');});
+  }
+  $scope.revieweDetails = function (rid) {
+    console.log(rid);
+    $state.go('app.reviewDetails',{rid:rid});
   }
   $scope.showMyDetails = function (fid) {
     console.log();
@@ -739,6 +744,11 @@ OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionic
     viewData.enableBack = true;
   });
   $scope.profileUpdate = {};
+
+  $scope.reviewerDetails = function (rid) {
+    console.log(rid);
+    $state.go('app.reviewDetails',{cid:rid});
+  }
 
   $rootScope.$on('profile:changed', function(e,data) {
     ProfileService.getUpdatedProfile().then(function (updateProfile) {

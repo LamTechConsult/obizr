@@ -6,20 +6,46 @@
     </ion-nav-buttons>
   </ion-nav-bar>
 
-
+test
   <ion-content>
     <div class="card" ng-show="serverErrors">
       <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
         {{serverError}}
       </div>
     </div>
-
-    <div class="list" ng-repeat="reviewer in reviewers">
+<!--
+    <div class="list" ng-repeat="reviewe in myReviews">
       <a class="item item-thumbnail-left" href="#">
-        <img src="cover.jpg">
-        <h2>{{reviewers.review}}Pretty Hate Machine</h2>
+        <img src="assets/img/user/default-avatar.png">
+        <h2>{{review}}Pretty Hate Machine</h2>
         <p>Nine Inch Nails</p>
       </a>
+    </div>-->
+    
+    <div class="recommended-reviews"  ng-hide="showMoreDetails">
+	    <div class="padding text-center" ng-if="!myReviews.length">
+          <ion-spinner icon="spiral"></ion-spinner>
+      </div>
+	    <div class="padding text-center" ng-if="myReviews.length == 0">
+        No reviews yet
+      </div>
+      <ion-list class="biz-list">
+        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews">
+          <img ng-if="review.field_ltc_biz_photos.und" ng-src="{{review.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(review.uid)">
+          <img ng-if="!review.field_ltc_biz_photos.und" src="assets/img/fullsize_biz.png" ng-click="reviewerProfile(review.uid)">
+	        <h4 ng-click="reviewerDetails(review.cid)">{{review.subject}}</h4>
+  	      <div class="biz-ratings {{review.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerDetails(review.cid)">
+  		      <span class="rating-numbers">{{review.field_ltc_biz_rating.und[0].rating | rating}}/5</span>
+            <div class="star-rating">
+              <span style="width:{{review.field_ltc_biz_rating.und[0].rating | ratingPercentage}}"></span>
+            </div> <span am-time-ago="review.created" am-preprocess="unix"></span>
+          </div>
+          <p ng-click="reviewerDetails(review.cid)">{{review.comment_body.und[0]['value']}}</p>
+          <i class="icon ion-ios-arrow-right icon-small" ng-click="reviewerDetails(review.cid)"></i>
+        </ion-item>
+      </ion-list>
     </div>
+
+    
   </ion-content>
 </ion-view>

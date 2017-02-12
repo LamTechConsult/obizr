@@ -115,12 +115,12 @@ OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$root
   $scope.$on("$ionicView.enter", function(event, data){
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
     $rootScope.reviewsDetails = {};
-    if($stateParams.rid){
+    if ($stateParams.rid) {
       businessesService.getBusinessesReviewById($stateParams.rid)
         .then(function (bizReviewDetail) {
           $rootScope.reviewsDetails = bizReviewDetail;
           console.log($rootScope.reviewsDetails);
-      }) .finally(function () { $rootScope.$broadcast('loading:hide');});
+      }) .finally(function () {$rootScope.$broadcast('loading:hide');});
     } 
   });
   
@@ -297,7 +297,6 @@ OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$sta
     $state.go('app.writeReview',{bid:$stateParams.bid});
   }
   $scope.reviewerDetails = function (rid) {
-    console.log(rid);
     $state.go('app.reviewDetails',{rid:rid});
   }
   $scope.reviewerProfile = function(uid){
@@ -745,9 +744,8 @@ OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionic
   });
   $scope.profileUpdate = {};
 
-  $scope.reviewerDetails = function (rid) {
-    console.log(rid);
-    $state.go('app.reviewDetails',{cid:rid});
+  $scope.reviewDetails = function (rid) {
+    $state.go('app.reviewDetails',{rid:rid});
   }
 
   $rootScope.$on('profile:changed', function(e,data) {

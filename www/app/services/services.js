@@ -1055,6 +1055,9 @@ OBizR.service('myAccountService', function($q,$http,DrupalApiConstant,DataServic
 	 */
 	function getMyReviews(uid) {
 		var defer = $q.defer();
+		// var mock = { "nodes": [{ "node": { "reviewid": "109", "biznid": "37331", "revieweruid": "62776", "biztitle": "KingHarman Rd Sat. (EPI) Hospital", "reviewtitle": "Nice Services", "reviewratings": "5/5", "reviewdateposted": "5 days 18 hours ago", "reviewmessage": "Nice Services", "bizimage": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/health-banner.jpg?itok=FSNhPuyG", "alt": "" } } }, { "node": { "reviewid": "129", "biznid": "40806", "revieweruid": "62776", "biztitle": "Lac's Villa Guest House", "reviewtitle": "Test", "reviewratings": "5/5", "reviewdateposted": "1 week 4 days ago", "reviewmessage": "Test", "bizimage": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/restaurant-banner.jpg?itok=bh0Y0njE", "alt": "" } } }] };
+		// defer.resolve(mock);
+    	return defer.promise;
 		if (myReviews == null || (Date.now() - lastFetched) > 60 * 10000) {
 			DataService.fetchMyReviews(uid).success(function (data) {
 		         myReviews = data;

@@ -30,18 +30,20 @@ test
         No reviews yet
       </div>
       <ion-list class="biz-list">
-        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews">
-          <img ng-if="review.field_ltc_biz_photos.und" ng-src="{{review.field_ltc_biz_photos.und[0].imgPath}}" ng-click="reviewerProfile(review.uid)">
-          <img ng-if="!review.field_ltc_biz_photos.und" src="assets/img/fullsize_biz.png" ng-click="reviewerProfile(review.uid)">
-	        <h4 ng-click="reviewerDetails(review.cid)">{{review.subject}}</h4>
-  	      <div class="biz-ratings {{review.field_ltc_biz_rating.und[0].rating | ratingClass}}" ng-click="reviewerDetails(review.cid)">
-  		      <span class="rating-numbers">{{review.field_ltc_biz_rating.und[0].rating | rating}}/5</span>
+        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews" 
+        ng-click="reviewDetails(review.node.reviewid)">
+          <img ng-if="review.node.bizimage" ng-src="{{review.node.bizimage.src}}" >
+          <img ng-if="!review.node.bizimage" src="assets/img/fullsize_biz.png">
+	        <h3>{{review.node.biztitle}}</h3>
+  	      <div class="biz-ratings {{review.node.reviewratings | ratingClass}}" >
+  		      <span class="rating-numbers">{{review.node.reviewratings| rating}}/5</span>
             <div class="star-rating">
-              <span style="width:{{review.field_ltc_biz_rating.und[0].rating | ratingPercentage}}"></span>
+              <span style="width:{{review.node.reviewratings | ratingPercentage}}"></span>
             </div> <span am-time-ago="review.created" am-preprocess="unix"></span>
           </div>
-          <p ng-click="reviewerDetails(review.cid)">{{review.comment_body.und[0]['value']}}</p>
-          <i class="icon ion-ios-arrow-right icon-small" ng-click="reviewerDetails(review.cid)"></i>
+          <p>{{review.node.reviewtitle}}</p>
+          <p>{{review.node.reviewmessage}}</p>
+          <i class="icon ion-ios-arrow-right icon-small"></i>
         </ion-item>
       </ion-list>
     </div>

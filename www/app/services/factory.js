@@ -162,7 +162,6 @@ OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,D
   var dataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {
-   
   };
  
   //fetchMyFriends

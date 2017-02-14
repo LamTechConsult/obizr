@@ -531,7 +531,6 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
       }
     }
   })
-
   .state('app.camSource',{
     url:'/camSource/:bid',
     views: {

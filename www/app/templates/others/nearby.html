@@ -2,23 +2,26 @@
   <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
   <ion-header-bar class="bar bar-positive bar-header item-input-inset" ng-class="{noInternet:!isOffline}">
     <button class="button button-clear offlinetext" ng-click="getMapView()">Map</button>
-      <label class="item-input-wrapper search-box">
+    <label class="item-input-wrapper search-box">
         <i class="icon ion-ios-search placeholder-icon"></i>
         <input type="search" placeholder="Enter a business name" ng-model="searchText" ng-change="doSearch()"/>
       </label>
     <button class="button button-clear offlinetext" ng-click="getFilterView()">Filter</button>
   </ion-header-bar>
-
   <ion-content>
-    <ion-refresher  pulling-text="Refresh..." on-refresh="doRefresh()"> </ion-refresher>
+    <ion-refresher pulling-text="Refresh..." on-refresh="doRefresh()"> </ion-refresher>
     <ion-list class="biz-list">
-      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in displayBusinesses | limitTo:more | orderBy:sort_param"  ng-click="businessDetails(bs.node.nid)">
+      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="bs in displayBusinesses | limitTo:more | orderBy:sort_param"
+        ng-click="businessDetails(bs.node.nid)">
         <img ng-if="bs.node.image.src && isOffline" ng-src="{{bs.node.image.src}}" alt="{{bs.node.image.alt}}">
         <img ng-if="!bs.node.image.src || !isOffline" src="assets/img/fullsize_biz.png">
-	    <h2>{{bs.node.title}}</h2>
-	    <div class="biz-ratings {{bs.node.ratings | ratingClass}}">
-		  <span class="rating-numbers">{{bs.node.ratings | rating}}/5</span>
-      <div class="star-rating"><span style="width:{{bs.node.ratings}}"></span></div> {{bs.node.reviewcount}} Reviews
+        <h2>{{bs.node.title}}</h2>
+        <div class="biz-ratings {{bs.node.ratings | ratingClass}}">
+          <span class="rating-numbers">{{bs.node.ratings | rating}}/5</span>
+          <div class="star-rating">
+            <span style="width:{{bs.node.ratings}}">
+        </span>
+          </div> {{bs.node.reviewcount}} Reviews
         </div>
         <div class="biz-category">{{bs.node.category}}</div>
         <div class="biz-hours">Hours Today{{bs.node.hours | getTimeFormat}}</div>
@@ -27,10 +30,7 @@
         <i class="icon ion-ios-arrow-right icon-small"></i>
       </ion-item>
     </ion-list>
-    <ion-infinite-scroll
-      ng-if="moreDataCanBeLoaded"
-      on-infinite="loadMore()"
-      distance="1%">
+    <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMore()" distance="1%">
     </ion-infinite-scroll>
   </ion-content>
 </ion-view>

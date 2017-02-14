@@ -5,15 +5,14 @@
     <ion-nav-buttons side="right">
     </ion-nav-buttons>
   </ion-nav-bar>
-
-test
+  test
   <ion-content>
     <div class="card" ng-show="serverErrors">
       <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
         {{serverError}}
       </div>
     </div>
-<!--
+    <!--
     <div class="list" ng-repeat="reviewe in myReviews">
       <a class="item item-thumbnail-left" href="#">
         <img src="assets/img/user/default-avatar.png">
@@ -21,33 +20,28 @@ test
         <p>Nine Inch Nails</p>
       </a>
     </div>-->
-    
-    <div class="recommended-reviews"  ng-hide="showMoreDetails">
-	    <div class="padding text-center" ng-if="!myReviews.length">
-          <ion-spinner icon="spiral"></ion-spinner>
+    <div class="recommended-reviews" ng-hide="showMoreDetails">
+      <div class="padding text-center" ng-if="!myReviews.length">
+        <ion-spinner icon="spiral"></ion-spinner>
       </div>
-	    <div class="padding text-center" ng-if="myReviews.length == 0">
+      <div class="padding text-center" ng-if="myReviews.length == 0">
         No reviews yet
       </div>
       <ion-list class="biz-list">
-        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews" 
-        ng-click="reviewDetails(review.node.reviewid)">
-          <img ng-if="review.node.bizimage" ng-src="{{review.node.bizimage.src}}" >
+        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews" ng-click="reviewDetails(review.node.cid)">
+          <img ng-if="review.node.bizimage" ng-src="{{review.node.bizimage.src}}">
           <img ng-if="!review.node.bizimage" src="assets/img/fullsize_biz.png">
-	        <h3>{{review.node.biztitle}}</h3>
-  	      <div class="biz-ratings {{review.node.reviewratings | ratingClass}}" >
-  		      <span class="rating-numbers">{{review.node.reviewratings| rating}}/5</span>
+          <h3>{{review.node.biztitle}}</h3>
+          <div class="biz-ratings {{review.node.reviewratings | ratingClass}}">
+            <span class="rating-numbers">{{review.node.reviewratings | rating}}/5</span>
             <div class="star-rating">
-              <span style="width:{{review.node.reviewratings | ratingPercentage}}"></span>
-            </div> <span am-time-ago="review.created" am-preprocess="unix"></span>
-          </div>
-          <p>{{review.node.reviewtitle}}</p>
-          <p>{{review.node.reviewmessage}}</p>
-          <i class="icon ion-ios-arrow-right icon-small"></i>
+              <span style="width:{{(review.node.reviewratings | rating )*20 | ratingPercentage}}"></span>
+            </div>
+            <p>{{review.node.reviewtitle}}</p>
+            <p>{{review.node.reviewmessage}}</p>
+            <i class="icon ion-ios-arrow-right icon-small"></i>
         </ion-item>
       </ion-list>
-    </div>
-
-    
+      </div>
   </ion-content>
 </ion-view>

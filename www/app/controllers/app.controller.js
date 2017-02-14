@@ -116,16 +116,16 @@ OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$root
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
     $rootScope.reviewsDetails = {};
     if ($stateParams.rid) {
+      console.log('fetching review details ....');
       businessesService.getBusinessesReviewById($stateParams.rid)
         .then(function (bizReviewDetail) {
+          console.log(bizReviewDetail);
           $rootScope.reviewsDetails = bizReviewDetail;
-          console.log($rootScope.reviewsDetails);
       }) .finally(function () {$rootScope.$broadcast('loading:hide');});
     } 
   });
   
   $scope.reviewerDetails = function (rid) {
-    console.log(rid);
     $state.go('app.reviewDetails',{cid:rid});
   }
   $scope.reviewerProfile = function(uid){
@@ -730,9 +730,9 @@ OBizR.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,busi
   });
   
   $scope.reviewerDetails = function (rid) {
-    console.log(rid);
     $state.go('app.reviewDetails',{rid:rid});
   }
+  
   $scope.reviewerProfile = function(uid){
     $state.go('app.reviewerProfile',{uid:uid});
   }
@@ -744,14 +744,14 @@ OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionic
   });
   $scope.profileUpdate = {};
 
-  $scope.reviewDetails = function (rid) {
-    $state.go('app.reviewDetails',{rid:rid});
+  $scope.reviewDetails = function (cid) {
+    $state.go('app.reviewDetails',{rid:cid});
   }
 
   $rootScope.$on('profile:changed', function(e,data) {
     ProfileService.getUpdatedProfile().then(function (updateProfile) {
-            $rootScope.profile = updateProfile;
-            $rootScope.currentUser = updateProfile;
+        $rootScope.profile = updateProfile;
+        $rootScope.currentUser = updateProfile;
     }).finally(function () {
        $rootScope.$broadcast('loading:hide');
     });

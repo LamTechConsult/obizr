@@ -714,17 +714,19 @@ OBizR.controller('AccountCtrl', function($scope,AuthenticationService,$localStor
 });
 
 OBizR.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,businessesService,$rootScope,$localStorage,ProfileService) {
+  
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
+  
   $scope.$on("$ionicView.enter", function(event, data){
-    $rootScope.reviewerProfile = {};
+    $scope.reviewerProfile = {};
     if($stateParams.uid){
       $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
       businessesService.getReviewerProfile($stateParams.uid)
         .then(function (data) {
-          $rootScope.reviewerProfile = data;
-          console.log($rootScope.reviewerProfile);
+          $scope.reviewerProfile = data;
+          console.log($scope.reviewerProfile);
       }) .finally(function () { $rootScope.$broadcast('loading:hide');});
     } 
   });

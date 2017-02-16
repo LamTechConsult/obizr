@@ -2,6 +2,9 @@
   "name": "OBizR",
   "version": "1.1.1",
   "description": "OBizR: Open Business Reviews Hybrid App",
+  "scripts": {
+    "start" : "ionic serve --address localhost"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",

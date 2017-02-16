@@ -28,7 +28,7 @@
         No reviews yet
       </div>
       <ion-list class="biz-list">
-        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews" ng-click="reviewDetails(review.node.cid)">
+        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="review in myReviews" ng-click="reviewDetails(review.node.cid, review.node.nid)">
           <img ng-if="review.node.bizimage" ng-src="{{review.node.bizimage.src}}">
           <img ng-if="!review.node.bizimage" src="assets/img/fullsize_biz.png">
           <h3>{{review.node.biztitle}}</h3>

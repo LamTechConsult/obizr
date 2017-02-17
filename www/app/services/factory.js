@@ -196,6 +196,12 @@ OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,D
     console.log(url);
     return $http.get(url,config);
   }
+   //fetchMyBusinesses
+  dataService.fetchMyBusinesses = function(uid) {
+    url = basePath + "slbiz/user/" + uid + "/business.json";
+    console.log(url);
+    return $http.get(url,config);
+  }
 
   //fetBusinesses
   dataService.fetchBusinesses = function() {

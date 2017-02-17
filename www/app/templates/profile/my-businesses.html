@@ -1,0 +1,51 @@
+my businesses view
+{{myBusinesses}}
+
+
+<ion-view view-title="My Businesss">
+  <div ng-class="{noInternet:!isOffline}"><span ng-if="!isOffline">YOU ARE OFFLINE! GET CONNECTED</span></div>
+  <ion-nav-bar class="bar bar-positive bar-header item-input-inset">
+    <ion-nav-back-button side="left">Back </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  test
+  <ion-content>
+    <div class="card" ng-show="serverErrors">
+      <div class="item item-text-wrap" ng-repeat="serverError in serverErrors">
+        {{serverError}}
+      </div>
+    </div>
+    <!--
+    <div class="list" ng-repeat="Businesse in myBusinesss">
+      <a class="item item-thumbnail-left" href="#">
+        <img src="assets/img/user/default-avatar.png">
+        <h2>{{Business}}Pretty Hate Machine</h2>
+        <p>Nine Inch Nails</p>
+      </a>
+    </div>-->
+    <div class="recommended-Businesss">
+      <div class="padding text-center" ng-if="!myBusinesses">
+        <ion-spinner icon="spiral"></ion-spinner>
+      </div>
+      <div class="padding text-center" ng-if="myBusinesses.nodes.length == 0">
+        No Businesss yet
+      </div>
+      <ion-list class="biz-list" ng-if="myBusinesses.nodes.length > 0">
+        <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="Business in myBusinesses.nodes" >
+          <img ng-if="Business.node.image.src" ng-src="{{Business.node.image.src}}">
+          <img ng-if="!Business.node.image.src" src="assets/img/fullsize_biz.png">
+          <h3>{{Business.node.biztitle}}</h3>
+          <div class="biz-ratings {{Business.node.ratings | ratingClass}}">
+            <span class="rating-numbers">{{Business.node.ratings | rating}}/5</span>
+            <div class="star-rating">
+              <span style="width:{{(Business.node.ratings | rating )*20 | ratingPercentage}}"></span>
+            </div>
+            <p>{{Business.node.title}}</p>
+            <p>{{Business.node.description}}</p>
+            <i class="icon ion-ios-arrow-right icon-small"></i>
+        </ion-item>
+      </ion-list>
+      </div>
+  </ion-content>
+</ion-view>

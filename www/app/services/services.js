@@ -945,7 +945,8 @@ OBizR.service('myAccountService', function($q,$http,DrupalApiConstant,DataServic
 		  getMyFollowings:getMyFollowings,
 		  getMyMessages:getMyMessages,
 		  getMyBookmarks: getMyBookmarks,
-		  getMyReviews : getMyReviews
+		  getMyReviews: getMyReviews,
+		  getMyBusinesses : getMyBusinesses
 	};
 	var myFriends = null;
 	var myFollowers = null;
@@ -954,6 +955,7 @@ OBizR.service('myAccountService', function($q,$http,DrupalApiConstant,DataServic
 	var myBookmarks = null;	
 	var lastFetched = null;
 	var myReviews = null;
+	var myBusinesses = null;
 	
 	return myAccountService;
 ////////////////////////////////////////////////////////////////////////////////
@@ -1071,6 +1073,22 @@ OBizR.service('myAccountService', function($q,$http,DrupalApiConstant,DataServic
 		    });
 		}else{
 			defer.resolve(myReviews);
+		}
+        return defer.promise;
+	}
+
+	function getMyBusinesses (uid) {
+		var defer = $q.defer();
+		if (myBusinesses == null || (Date.now() - lastFetched) > 60 * 10000) {
+			DataService.fetchMyBusinesses(uid).success(function (data) {
+		        myBusinesses = data;
+		        defer.resolve(myBusinesses);
+		        lastFetched = Date.now();
+		    }).catch(function (error) {
+		        defer.reject(error);
+		    });
+		}else{
+			defer.resolve(myBusinesses);
 		}
         return defer.promise;
 	}

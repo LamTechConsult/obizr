@@ -358,6 +358,15 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
         }
       }
   })
+  .state('app.myBusinesses',{
+      url:'/myBusinesses',
+      views: {
+        'menu-myBusinesses': {
+          templateUrl: 'app/templates/profile/my-businesses.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+  })
   .state('app.reviewerProfile',{
     url:'/reviewerProfile/:uid',
     views: {

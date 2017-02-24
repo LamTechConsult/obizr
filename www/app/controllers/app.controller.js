@@ -687,32 +687,30 @@ OBizR.controller('AccountCtrl', function ($scope, AuthenticationService, $localS
   }
 
   $scope.goToBusinessDetails = function (uid) {
-    console.log(uid + '...we are going here');
+    console.log(uid + '...we are going here')
     $state.go('app.businessDetails', {bid: uid})
   }
-  
+
   $scope.getTimeFormat = function (argument) {
     var val = argument.split('-')
     return val[1] + '-' + val[2]
   }
   $scope.getStatus = function (argument) {
     var val = argument.split(' ')
-    console.log(val);
+    console.log(val)
     // var status = val[0].split(' ')
-    return val[val.length-1]
+    return val[val.length - 1]
   }
 
   $scope.myBusinesses = function () {
-    // console.log('enetred my business view ...');
-    // $rootScope.$broadcast('loading:show', { loading_settings: { template: '<p><ion-spinner></ion-spinner><br/>Loading...</p>' } })
+    console.log('enetred my business view ...')
+    $rootScope.$broadcast('loading:show', { loading_settings: { template: '<p><ion-spinner></ion-spinner><br/>Loading...</p>' } })
 
-    // myAccountService.getMyBusinesses($rootScope.currentUser.uid).then(function (result) {
-    //   console.log(result);
-
-      var result = { "nodes": [{ "node": { "nid": "40181", "uid": "16598", "title": "Florence Restaurant", "ratings": "5/5", "Postal Address - Thoroughfare (i.e. Street address)": "2 Michael Street,", "city": "Freetown", "email": "info@ntb.gov.sl", "phone": "+23276642003", "website": "http://www.ntb.gov.sl", "chiefdom": "Freetown", "category": "Restaurant", "keyword": "Restaurant", "image": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/restaurant-banner.jpg?itok=bh0Y0njE", "alt": "" }, "geocode_lat": "", "geocode_long": "", "hours": "Monday - Saturday: 8:00-23:00Sunday: Closed", "reviewcount": "0", "description": "Italian & International menu, sea view & Sea\r\nfood" } }, { "node": { "nid": "9051", "uid": "16598", "title": "J.T.Reffal Memorial Pre-School - 109248", "ratings": "5/5", "Postal Address - Thoroughfare (i.e. Street address)": "J.T.Reffal Memorial Pre-School,Back Of Fire Force", "city": "Freetown", "email": "info@education.gov.sl", "phone": "+232 76919472", "website": "http://education.gov.sl", "chiefdom": "Freetown", "category": "School", "keyword": "Preschools", "image": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/education-banner_0.jpg?itok=YaNrJfwI", "alt": "" }, "geocode_lat": "8.465676500000", "geocode_long": "-13.231722500000", "hours": "Monday - Friday: 8:00-17:00Saturday - Sunday: Closed", "reviewcount": "0", "description": "Founded 1940 and located at J.T.Reffal  Memorial  Pre-School,Back Of Fire Force and can be contacted using 76919472" } }, { "node": { "nid": "41486", "uid": "16598", "title": "Club Where Else", "ratings": "5/5", "Postal Address - Thoroughfare (i.e. Street address)": "C/o Bintumani Hotel Aberdeen Hills,", "city": "Freetown", "email": "", "phone": "", "website": "", "chiefdom": "Freetown", "category": "Restaurant", "keyword": "Senegalese", "image": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/restaurant-banner.jpg?itok=bh0Y0njE", "alt": "" }, "geocode_lat": "8.491901700000", "geocode_long": "-13.287993600000", "hours": "", "reviewcount": "0", "description": "Fitness/gym, AC,  Multiple    VIP  Room,    Large  Car\r\nPark, Satellite TV, Bars, Snookers, dining rooms" } }, { "node": { "nid": "30426", "uid": "16598", "title": "Saint Augustine Agricultural Secondary School - 103792", "ratings": "3/5", "Postal Address - Thoroughfare (i.e. Street address)": "St. Augustine Agricultural Senior Secondary School Tintafor", "city": "Tintafor", "email": "info@education.gov.sl", "phone": "", "website": "http://education.gov.sl", "chiefdom": "Mahera", "category": "School", "keyword": "Senior Secondary Schools", "image": { "src": "http://slbr.sl/sites/default/files/styles/bis_mob_view/public/default_images/education-banner_0.jpg?itok=YaNrJfwI", "alt": "" }, "geocode_lat": "8.628644700000", "geocode_long": "-13.215855700000", "hours": "Monday - Friday: 8:00-17:00Saturday - Sunday: Closed", "reviewcount": "0", "description": "Founded 1984 and located at St. Augustine Agricultural Senior  Secondary School Tintafor, Tintafor and can be contacted using " } }] };
+    myAccountService.getMyBusinesses($rootScope.currentUser.uid).then(function (result) {
+      console.log(result)
 
       $rootScope.myBusinesses = result
-    // }).finally(function () { $rootScope.$broadcast('loading:hide'); })
+    }).finally(function () { $rootScope.$broadcast('loading:hide'); })
   }
 
   $scope.revieweDetails = function (rid) {

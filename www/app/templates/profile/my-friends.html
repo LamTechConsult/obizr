@@ -9,7 +9,7 @@
 
   <ion-content class="my-friends">
     <div class="list slr-list">
-      <a class="item item-avatar item-icon-left item-icon-right" ng-repeat="friend in friends" href="#/app/myFriendsDetails/{{friend.relationship.uid}}">
+      <a class="item item-avatar item-icon-left item-icon-right" ng-repeat="friend in friends" href="#/app/reviewerProfile/{{friend.relationship.uid}}">
         <img ng-if="currentUser.pictureUrl" ng-src="{{currentUser.pictureUrl}}" />
         <img ng-if="!currentUser.pictureUrl" src="assets/img/user/default-avatar.png" />
         <div class="slr-item-text">

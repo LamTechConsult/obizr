@@ -239,6 +239,7 @@ OBizR.controller('bizCtrl', function ($scope, $state, $ionicHistory, $rootScope,
     $rootScope.businessesDetails = null
 
     if ($stateParams.bid) {
+      
       businessesService.searchedBusinessDetails($stateParams.bid).then(function (biz) {
         $rootScope.businessesDetails = biz.nodes[0].node
         if ($rootScope.businessesDetails.geocode_lat) {
@@ -285,6 +286,7 @@ OBizR.controller('bizCtrl', function ($scope, $state, $ionicHistory, $rootScope,
   }
 
   $scope.showMoreDetails = false
+
   $scope.showMoreBizDetail = function () {
     return $scope.showMoreDetails = !$scope.showMoreDetails
   }
@@ -686,11 +688,6 @@ OBizR.controller('AccountCtrl', function ($scope, AuthenticationService, $localS
     }).finally(function () { $rootScope.$broadcast('loading:hide');})
   }
 
-  $scope.goToBusinessDetails = function (uid) {
-    console.log(uid + '...we are going here')
-    $state.go('app.businessDetails', {bid: uid})
-  }
-
   $scope.getTimeFormat = function (argument) {
     var val = argument.split('-')
     return val[1] + '-' + val[2]
@@ -773,6 +770,11 @@ OBizR.controller('ProfileCtrl', function ($scope, $rootScope, ProfileService, $i
     viewData.enableBack = true
   })
   $scope.profileUpdate = {}
+  
+  $scope.goToBusinessDetails = function (uid) {
+    console.log(uid + '...we are going here')
+    $state.go('app.businessDetails', {bid: uid})
+  }
 
   $scope.reviewDetails = function (cid, nid) {
     $rootScope.$broadcast('loading:show', {loading_settings: {template: '<p><ion-spinner></ion-spinner><br/>Loading...</p>'}})

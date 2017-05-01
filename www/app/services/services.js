@@ -1,7 +1,7 @@
 /**
  * Device Services :
  */
-OBizR.service('DeviceService', function($q,$cordovaDevice) {
+NPSL.service('DeviceService', function($q,$cordovaDevice) {
 
    return {
       getDeviceInfo: function() {
@@ -28,7 +28,7 @@ OBizR.service('DeviceService', function($q,$cordovaDevice) {
 /**
  * Localstorage Services :
  */
-OBizR.service('LSService', function($q,$window) {
+NPSL.service('LSService', function($q,$window) {
 
    return {
       getItem: function(item) {
@@ -43,7 +43,7 @@ OBizR.service('LSService', function($q,$window) {
 /**
  * location Services :
  */
-OBizR.service('locationService', function($q,$cordovaGeolocation) {
+NPSL.service('locationService', function($q,$cordovaGeolocation) {
 	var locationService = {
 		getCurrentPosition:getCurrentPosition,
 		getGeocodeByAddress:getGeocodeByAddress,
@@ -125,7 +125,7 @@ OBizR.service('locationService', function($q,$cordovaGeolocation) {
 /**
  * Camera Services :
  */
-OBizR.service('CameraService', function($q,$cordovaCamera) {
+NPSL.service('CameraService', function($q,$cordovaCamera) {
 
    return {
       getPicture: function(options) {
@@ -143,7 +143,7 @@ OBizR.service('CameraService', function($q,$cordovaCamera) {
 /**
  * pageService
  */
-OBizR.service('pageService', function($q,$filter,$rootScope,StaticPageService) {
+NPSL.service('pageService', function($q,$filter,$rootScope,StaticPageService) {
 	var pageService = {
 		getAboutPage:getAboutPage,
 		getAboutBizSubsPage:getAboutBizSubsPage,
@@ -417,7 +417,7 @@ OBizR.service('pageService', function($q,$filter,$rootScope,StaticPageService) {
 /**
  * BiZ Services :
  */
-OBizR.service('taxonomyService', function($q,$filter,$rootScope,$http,DrupalHelperService,DrupalApiConstant,DataService,UserResource,NodeResource,FileResource,CommentResource) {
+NPSL.service('taxonomyService', function($q,$filter,$rootScope,$http,DrupalHelperService,DrupalApiConstant,DataService,UserResource,NodeResource,FileResource,CommentResource) {
 	var taxonomyService = {
 		getCategory:getCategory,
 		getKeywords:getKeywords,
@@ -542,7 +542,7 @@ OBizR.service('taxonomyService', function($q,$filter,$rootScope,$http,DrupalHelp
 /**
  * BiZ Services :
  */
-OBizR.service('businessesService', function($q,$filter,customPostService,OfflineDataService,$rootScope,$localStorage,$http,DrupalHelperService,DrupalApiConstant,DataService,UserResource,NodeResource,FileResource,CommentResource) {
+NPSL.service('businessesService', function($q,$filter,customPostService,OfflineDataService,$rootScope,$localStorage,$http,DrupalHelperService,DrupalApiConstant,DataService,UserResource,NodeResource,FileResource,CommentResource) {
     var businessesService = {
 		  getBusinesses: getBusinesses,
 		  getBusinessesReview:getBusinessesReview,
@@ -938,7 +938,7 @@ OBizR.service('businessesService', function($q,$filter,customPostService,Offline
 /**
  * myAccountService :
  */
-OBizR.service('myAccountService', function($q,$http,DrupalApiConstant,DataService) {
+NPSL.service('myAccountService', function($q,$http,DrupalApiConstant,DataService) {
 	var myAccountService = {
 		  getMyFriends: getMyFriends,
 		  getMyFollowers:getMyFollowers,

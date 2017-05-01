@@ -1,16 +1,16 @@
 {
   "project_info": {
     "project_number": "248768222626",
-    "firebase_url": "https://obizr-9c77c.firebaseio.com",
-    "project_id": "obizr-9c77c",
-    "storage_bucket": "obizr-9c77c.appspot.com"
+    "firebase_url": "https://NPSL-9c77c.firebaseio.com",
+    "project_id": "NPSL-9c77c",
+    "storage_bucket": "NPSL-9c77c.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:248768222626:android:ba040f3fc1b26d06",
         "android_client_info": {
-          "package_name": "io.obizr.obizrsl"
+          "package_name": "io.NPSL.NPSLsl"
         }
       },
       "oauth_client": [

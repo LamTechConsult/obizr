@@ -1,7 +1,7 @@
 /**
  * AuthService :
  */
-OBizR.factory('AuthService', function($http, DrupalApiConstant,UserResourceConstant,AuthenticationHttpInterceptor) {
+NPSL.factory('AuthService', function($http, DrupalApiConstant,UserResourceConstant,AuthenticationHttpInterceptor) {
   var authService = {};
   //var today = $filter('date')(new Date(), 'yyyy-MM-dd HH:mm:ss');
   var header = {"Content-Type": "application/json"};
@@ -25,7 +25,7 @@ OBizR.factory('AuthService', function($http, DrupalApiConstant,UserResourceConst
 /**
  * customPostService :
  */
-OBizR.factory('customPostService', function($http,$filter,DrupalApiConstant) {
+NPSL.factory('customPostService', function($http,$filter,DrupalApiConstant) {
   var unix = Math.round(+new Date()/1000);
   var created = unix;//$filter('date')(new Date(), 'yyyy-MM-dd HH:mm:ss');
   var updated = created;
@@ -38,7 +38,7 @@ OBizR.factory('customPostService', function($http,$filter,DrupalApiConstant) {
     console.log(bizData);
     bizData.created = created;
     bizData.created = updated;
-    url = basePath + "entity_obizr_backend";
+    url = basePath + "entity_NPSL_backend";
     return $http.post(url,bizData,header);
   };
   return customPostService;
@@ -47,7 +47,7 @@ OBizR.factory('customPostService', function($http,$filter,DrupalApiConstant) {
 /**
  * Clickatail SMS service :
  */
-OBizR.factory('smsService', function($http) {
+NPSL.factory('smsService', function($http) {
 
   var smsService = {};
   var basePath = 'https://platform.clickatell.com/messages';//'http://api.clickatell.com/';
@@ -67,7 +67,7 @@ OBizR.factory('smsService', function($http) {
 /**
  * OfflineDataService :
  */
-OBizR.factory('OfflineDataService', function($http,DrupalApiConstant) {
+NPSL.factory('OfflineDataService', function($http,DrupalApiConstant) {
   var OfflineDataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {};
@@ -83,7 +83,7 @@ OBizR.factory('OfflineDataService', function($http,DrupalApiConstant) {
 /**
  * StaticPageService :
  */
-OBizR.factory('StaticPageService', function($http,DrupalApiConstant) {
+NPSL.factory('StaticPageService', function($http,DrupalApiConstant) {
   var staticPageService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {};
@@ -158,7 +158,7 @@ OBizR.factory('StaticPageService', function($http,DrupalApiConstant) {
 /**
  * DataService :
  */
-OBizR.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,DrupalApiConstant) {
+NPSL.factory('DataService', function($q,$http,$httpParamSerializer,$rootScope,DrupalApiConstant) {
   var dataService = {};
   var basePath = DrupalApiConstant.drupal_instance +DrupalApiConstant.api_endpoint;
   var config = {};

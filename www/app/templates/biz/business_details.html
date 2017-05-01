@@ -4,7 +4,6 @@
     <ion-nav-back-button side="left">Back </ion-nav-back-button>
     <ion-nav-title><img src="assets/img/obizr-logo-icon.png"/></ion-nav-title>
     <ion-nav-buttons side="right">
-      <button class="button button-icon button-clear ion-more" ng-click="writeReviewClick()"></button>
     </ion-nav-buttons>
   </ion-nav-bar>
 
@@ -21,13 +20,10 @@
         <span class="{{businessesDetails.hours | getStatus}}">{{businessesDetails.hours | getStatus}}</span>
       </ion-item>
     </ion-list>
-<div class="obizrbg">
+<div class="NPSLbg">
     <button class="button button-block button-calm shadow-none m-none" ng-click="writeReviewClick()"><i class="icon ion-compose"></i> Write a Review</button>
     <div class="button-bar">
-      <!--<button class="button button-small icon icon-top ion-android-bookmark" ng-click="bookmarkClick()">Bookmark</button>-->
-      <button class="button obizr-button claimbusiness button-calm button-small icon icon-top ion-ios-locked-outline" ng-click="claimBusinessClick()">Claim Business</button>
-      <button class="button obizr-button editbusiness button-calm button-small icon icon-top ion-edit" ng-click="editBusinessClick()">Edit Business</button>
-    </div>
+  </div>
 
     <div class="map-address">
     <div class="map" id="map" data-tap-disabled="true"></div>
@@ -43,21 +39,21 @@
       <a class="item item-icon-left" ng-click="showDirectionMapClick()">
         <i class="icon ion-ios-navigate-outline"></i>
         <div class="slr-item-text">
-          <h4>Get Direction to Business</h4>
+          <h4>Get Direction</h4>
           <p>{{}}</p>
         </div>
       </a>
       <a class="item item-icon-left" ng-href="tel:{{businessesDetails.phone}}">
         <i class="icon ion-ios-telephone"></i>
         <div class="slr-item-text">
-          <h4>Call Business</h4>
+          <h4>Call the station</h4>
           <p>{{businessesDetails.phone}}</p>
         </div>
       </a>
       <a class="item item-icon-left"  ng-href="mailto:{{businessesDetails.email}}">
         <i class="icon ion-ios-email"></i>
         <div class="slr-item-text">
-          <h4>Send Business and Email</h4>
+          <h4>Send an email</h4>
           <p>{{businessesDetails.email}}</p>
         </div>
       </a>
@@ -65,21 +61,21 @@
         <i class="icon ion-more"></i>
         <div class="slr-item-text">
           <h4>View More Info</h4>
-          <p>description, photos, category, chiefdom</p>
+          <p>description, photos, keyword, district</p>
         </div>
       </div>
       <div class="toggleBiz" ng-if="showMoreDetails">
         <div class="item item-icon-left" >
           <i class="icon ion-ios-pricetag"></i>
           <div class="slr-item-text">
-            <h4>Category</h4>
-            <p>{{businessesDetails.category}}</p>
+            <h4>Keyword</h4>
+            <p>{{businessesDetails.keywords}}</p>
           </div>
         </div>
         <div class="item item-icon-left">
           <i class="icon ion-aperture"></i>
           <div class="slr-item-text">
-            <h4>Chiefdom</h4>
+            <h4>District</h4>
             <p>{{businessesDetails.chiefdom}}</p>
           </div>
         </div>
@@ -87,7 +83,6 @@
           <i class="icon ion-document-text"></i>
           <div class="slr-item-text item-text-wrap">
             <h4>Description</h4>
-            <!-- <p>{{businessesDetails.field_ltc_biz_description.und[0].value}}</p> -->
             <p>{{businessesDetails.description}}</p>
           </div>
         </div>
@@ -107,7 +102,7 @@
     </div>
 
     <div class="recommended-reviews"  ng-hide="showMoreDetails">
-	    <h5 class="obizrbg light padding m-none">Recommended Reviews</h5>
+	    <h5 class="NPSLbg light padding m-none">Comment</h5>
 	    <div class="padding text-center" ng-if="!businessesReview.length">
       <ion-spinner icon="spiral"></ion-spinner></div>
       <ion-list class="biz-list">

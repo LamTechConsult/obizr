@@ -1,5 +1,5 @@
 
-OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService,$cordovaNetwork) {
+NPSL.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolocation,$rootScope,$state,taxonomyService,$cordovaNetwork) {
   $rootScope.ProvienceItem = [];
   $rootScope.DistrictItem = [];
   $rootScope.ChiefdomItem = [];
@@ -108,7 +108,7 @@ OBizR.controller('mainCtrl', function($scope,$localStorage,$window,$cordovaGeolo
   }
 });
 
-OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {
+NPSL.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -126,7 +126,7 @@ OBizR.controller('reviewDetailsCtrl', function($scope,$state,$ionicHistory,$root
  
 });
 
-OBizR.controller('writeReviewCtrl', function($scope,$state,CameraService,$ionicHistory,$rootScope,$stateParams,$localStorage,businessesService) {
+NPSL.controller('writeReviewCtrl', function($scope,$state,CameraService,$ionicHistory,$rootScope,$stateParams,$localStorage,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -226,7 +226,7 @@ OBizR.controller('writeReviewCtrl', function($scope,$state,CameraService,$ionicH
   }
 });
 
-OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
     $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
@@ -313,7 +313,7 @@ OBizR.controller('bizCtrl', function($scope,$state,$ionicHistory,$rootScope,$sta
   }
 });
 
-OBizR.controller('bizCtrlMap', function($scope,$state,$filter,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMap', function($scope,$state,$filter,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -365,7 +365,7 @@ OBizR.controller('bizCtrlMap', function($scope,$state,$filter,$ionicHistory,$roo
   }
 });
 
-OBizR.controller('bizCtrlMapDirectionsOptions', function($scope,$state,$cordovaInAppBrowser,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMapDirectionsOptions', function($scope,$state,$cordovaInAppBrowser,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -427,7 +427,7 @@ OBizR.controller('bizCtrlMapDirectionsOptions', function($scope,$state,$cordovaI
   } 
 });
 
-OBizR.controller('bizCtrlMapDirectionsStartPoint', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMapDirectionsStartPoint', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -443,7 +443,7 @@ OBizR.controller('bizCtrlMapDirectionsStartPoint', function($scope,$state,$ionic
   }
 });
 
-OBizR.controller('bizCtrlMapDirectionsStartPointLocation', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMapDirectionsStartPointLocation', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -485,7 +485,7 @@ OBizR.controller('bizCtrlMapDirectionsStartPointLocation', function($scope,$stat
   }
 });
 
-OBizR.controller('bizCtrlMapDirectionsEndPointLocation', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMapDirectionsEndPointLocation', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -527,7 +527,7 @@ OBizR.controller('bizCtrlMapDirectionsEndPointLocation', function($scope,$state,
   }
 });
 
-OBizR.controller('bizCtrlMapDirectionsEndPoint', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
+NPSL.controller('bizCtrlMapDirectionsEndPoint', function($scope,$state,$ionicHistory,$rootScope,$stateParams,$localStorage,$cordovaGeolocation,ProfileService,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -543,7 +543,7 @@ OBizR.controller('bizCtrlMapDirectionsEndPoint', function($scope,$state,$ionicHi
   }
 });
 
-OBizR.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService) {
+NPSL.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService) {
   
   $scope.$on("$ionicView.enter", function(event, data){
 
@@ -607,7 +607,7 @@ OBizR.controller('homeCtrl', function($scope,$state,$ionicHistory,$cordovaGeoloc
   }
 });
 
-OBizR.controller('SplashCtrl',function($rootScope,$scope,$state,$window,$ionicSlideBoxDelegate){
+NPSL.controller('SplashCtrl',function($rootScope,$scope,$state,$window,$ionicSlideBoxDelegate){
   $scope.signinClick = function () {
     $state.go('login');
   }
@@ -619,7 +619,7 @@ OBizR.controller('SplashCtrl',function($rootScope,$scope,$state,$window,$ionicSl
   }
 });
 
-OBizR.controller('DashCtrl', function($scope,$state,$ionicHistory,$rootScope,$localStorage,ProfileService) {
+NPSL.controller('DashCtrl', function($scope,$state,$ionicHistory,$rootScope,$localStorage,ProfileService) {
   //$scope.currentUser = profile;
   $scope.$on("$ionicView.enter", function(event, data){
       $rootScope.$broadcast('loading:show', {loading_settings: {template: "<p><ion-spinner></ion-spinner><br/>Loading...</p>"}});
@@ -632,7 +632,7 @@ OBizR.controller('DashCtrl', function($scope,$state,$ionicHistory,$rootScope,$lo
   });
 });
 
-OBizR.controller('AccountCtrl', function($scope,AuthenticationService,$localStorage,$ionicHistory,$stateParams,$state,$rootScope,myAccountService) {
+NPSL.controller('AccountCtrl', function($scope,AuthenticationService,$localStorage,$ionicHistory,$stateParams,$state,$rootScope,myAccountService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -697,7 +697,7 @@ OBizR.controller('AccountCtrl', function($scope,AuthenticationService,$localStor
   }
 });
 
-OBizR.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,businessesService,$rootScope,$localStorage,ProfileService) {
+NPSL.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,businessesService,$rootScope,$localStorage,ProfileService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -714,7 +714,7 @@ OBizR.controller('reviewerProfileCtrl', function($scope,$state,$stateParams,busi
   });
 });
 
-OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionicHistory,$localStorage,$state,AuthenticationServiceConstant, AuthenticationService) {
+NPSL.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionicHistory,$localStorage,$state,AuthenticationServiceConstant, AuthenticationService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -767,13 +767,13 @@ OBizR.controller('ProfileCtrl', function($scope,$rootScope,ProfileService,$ionic
   }
 });
 
-OBizR.controller('ForgetPassCtrl',function($rootScope,$scope,$state,$window,$ionicSlideBoxDelegate){
+NPSL.controller('ForgetPassCtrl',function($rootScope,$scope,$state,$window,$ionicSlideBoxDelegate){
   $rootScope.doSignup = function () {
     console.log($state.is);
   }
 });
 
-OBizR.controller('LoginCtrl',function($scope,$rootScope,$window,$cordovaGeolocation,DeviceService,AuthService,$ionicPopup,$state,$ionicLoading,$localStorage,AuthenticationService,locationService){
+NPSL.controller('LoginCtrl',function($scope,$rootScope,$window,$cordovaGeolocation,DeviceService,AuthService,$ionicPopup,$state,$ionicLoading,$localStorage,AuthenticationService,locationService){
   //data for vm.loginForm
   $scope.user = {};
   $scope.serverErrors = [];
@@ -843,7 +843,7 @@ OBizR.controller('LoginCtrl',function($scope,$rootScope,$window,$cordovaGeolocat
   }
   $scope.iAgree = function () {
     var confirmPopup = $ionicPopup.confirm({
-         template: 'Allow OBizR to access your location while you use the app?',
+         template: 'Allow NPSL to access your location while you use the app?',
          cancelText:"Don't Allow",
          okText: 'Allow',
          cancelType:'button button-clear button-positive',
@@ -907,7 +907,7 @@ OBizR.controller('LoginCtrl',function($scope,$rootScope,$window,$cordovaGeolocat
   }
 });
 
-OBizR.controller('SocialCtrl',function($rootScope,$http, $location, $cordovaOauth,$scope,$state,$window,$ionicSlideBoxDelegate){
+NPSL.controller('SocialCtrl',function($rootScope,$http, $location, $cordovaOauth,$scope,$state,$window,$ionicSlideBoxDelegate){
   $scope.data = [];
   $scope.facebookLogin = function() {
     $cordovaOauth.facebook("325681044294287", ["email"]).then(function(result) {
@@ -936,7 +936,7 @@ OBizR.controller('SocialCtrl',function($rootScope,$http, $location, $cordovaOaut
   }
 });
 
-OBizR.controller('anonymousCtrl',function($rootScope,$http, $location, $cordovaOauth,$scope,$state,$window,$ionicSlideBoxDelegate){
+NPSL.controller('anonymousCtrl',function($rootScope,$http, $location, $cordovaOauth,$scope,$state,$window,$ionicSlideBoxDelegate){
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });

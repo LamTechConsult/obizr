@@ -1,4 +1,4 @@
-OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
+NPSL.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -70,7 +70,7 @@ OBizR.controller('filterCtrl', function($scope,$state,$ionicHistory,$cordovaGeol
   }
 });
 
-OBizR.controller('searchCtrl', function($scope,$state,$ionicHistory,$rootScope) {
+NPSL.controller('searchCtrl', function($scope,$state,$ionicHistory,$rootScope) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -91,7 +91,7 @@ OBizR.controller('searchCtrl', function($scope,$state,$ionicHistory,$rootScope) 
   }
 });
 
-OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ionicHistory,$rootScope,businessesService) {
+NPSL.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ionicHistory,$rootScope,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -156,7 +156,7 @@ OBizR.controller('srchResCtrl', function($scope,$state,$filter,$stateParams,$ion
   }
 });
 
-OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
+NPSL.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cordovaGeolocation,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -220,7 +220,7 @@ OBizR.controller('otherCtrl', function($scope,$state,$filter,$ionicHistory,$cord
     });
   }
 });
-OBizR.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHistory,$cordovaGeolocation,$rootScope,businessesService) {
+NPSL.controller('claimBizCtrl', function($scope,$state,$stateParams,$ionicHistory,$cordovaGeolocation,$rootScope,businessesService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });

@@ -1,7 +1,7 @@
 /*
  * Add bisuness controller
  */
-OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$state,CameraService,$ionicHistory,$ionicLoading,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
+NPSL.controller('addBizCtrl', function($scope,$http,$filter,locationService,$state,CameraService,$ionicHistory,$ionicLoading,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });
@@ -384,7 +384,7 @@ OBizR.controller('addBizCtrl', function($scope,$http,$filter,locationService,$st
 /*
  * Edit bisuness controller
  */
-OBizR.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraService,$stateParams,$ionicHistory,$ionicLoading,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
+NPSL.controller('editBizCtrl', function($scope,$http,$filter,$state,CameraService,$stateParams,$ionicHistory,$ionicLoading,$rootScope,$localStorage,ProfileService,businessesService,taxonomyService) {
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });

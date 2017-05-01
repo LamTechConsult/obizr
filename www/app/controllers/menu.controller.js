@@ -1,5 +1,5 @@
 
-OBizR.controller('menuCtrl',function($rootScope,$sce,$scope,locationService,$localStorage,$state,pageService,$cordovaGeolocation,businessesService){
+NPSL.controller('menuCtrl',function($rootScope,$sce,$scope,locationService,$localStorage,$state,pageService,$cordovaGeolocation,businessesService){
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = true;
   });

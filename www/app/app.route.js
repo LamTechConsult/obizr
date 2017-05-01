@@ -1,4 +1,4 @@
-OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServiceConstant, $urlRouterProvider,$ionicConfigProvider,$httpProvider) {
+NPSL.config(function($stateProvider, $localStorageProvider, AuthenticationServiceConstant, $urlRouterProvider,$ionicConfigProvider,$httpProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -546,7 +546,7 @@ OBizR.config(function($stateProvider, $localStorageProvider, AuthenticationServi
   //$urlRouterProvider.otherwise('splash');
 });
 
-OBizR.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork, $ionicPopup, $cordovaToast, $state, $localStorage, DrupalApiConstant, $urlRouter, $ionicLoading) {
+NPSL.run(function ($rootScope, AuthenticationService, $window, $cordovaNetwork, $ionicPopup, $cordovaToast, $state, $localStorage, DrupalApiConstant, $urlRouter, $ionicLoading) {
   $rootScope.$on('loading:show', loadingShowCallback);
   $rootScope.$on('loading:hide', loadingHideCallback);
 

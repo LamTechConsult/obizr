@@ -1,5 +1,5 @@
 
-OBizR.filter('cut', function () {
+NPSL.filter('cut', function () {
   return function (value, wordwise, max, tail) {
     if (!value) return '';
 
@@ -20,7 +20,7 @@ OBizR.filter('cut', function () {
 });
 
 // Setup the filter
-OBizR.filter('ratingClass', function() {
+NPSL.filter('ratingClass', function() {
 
   // Create the return function
   return function(rating) {
@@ -43,7 +43,7 @@ OBizR.filter('ratingClass', function() {
 });
 
 // Setup the filter
-OBizR.filter('rating', function() {
+NPSL.filter('rating', function() {
 
   // Create the return function
   return function(rating) {
@@ -61,7 +61,7 @@ OBizR.filter('rating', function() {
 });
 
 // Setup the filter
-OBizR.filter('ratingPercentage', function() {
+NPSL.filter('ratingPercentage', function() {
 
   // Create the return function
   return function(rating) {
@@ -74,7 +74,7 @@ OBizR.filter('ratingPercentage', function() {
 });
 
 // Setup the filter
-OBizR.filter('distance', function() {
+NPSL.filter('distance', function() {
 
   // Create the return function
   return function(lat1, lon1, lat2, lon2, unit) {
@@ -98,7 +98,7 @@ OBizR.filter('distance', function() {
 });
 
 // Setup the time format
-OBizR.filter('getTimeFormat', function() {
+NPSL.filter('getTimeFormat', function() {
 
   // Create the return function
   return function(hours) {
@@ -111,7 +111,7 @@ OBizR.filter('getTimeFormat', function() {
 });
 
 // Setup the time format
-OBizR.filter('getStatus', function() {
+NPSL.filter('getStatus', function() {
 
   // Create the return function
   return function(hours) {
@@ -125,7 +125,7 @@ OBizR.filter('getStatus', function() {
 });
 
 // Setup the getSelectedKeyword filter
-OBizR.filter('getSelectedKeyword', function() {
+NPSL.filter('getSelectedKeyword', function() {
 
   // Create the return function
   return function(niddle,keyword) {
@@ -146,7 +146,7 @@ OBizR.filter('getSelectedKeyword', function() {
   }
 });
 // Setup the getSelectedCategory filter
-OBizR.filter('getSelectedCategory', function() {
+NPSL.filter('getSelectedCategory', function() {
 
   // Create the return function
   return function(niddle,category) {
@@ -169,7 +169,7 @@ OBizR.filter('getSelectedCategory', function() {
   }
 });
 // Setup custom business filter
-OBizR.filter('customBizFilter', function() {
+NPSL.filter('customBizFilter', function() {
 
   // Create the return function
   return function(biz,filterCriteria) {
@@ -189,7 +189,7 @@ OBizR.filter('customBizFilter', function() {
 
 
 // Setup custom business filter
-OBizR.filter('openNowFilter', function() {
+NPSL.filter('openNowFilter', function() {
 
   // Create the return function
   return function(bs) {

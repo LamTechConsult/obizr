@@ -1,6 +1,6 @@
-**What is OBizR?**
+**What is NPSL?**
 
-OBizR is a location-based local business review, directory, and citizen-generated open data platform for Africa. "OBizR Sierra Leone" is your local guide to finding the best places to eat, shop, sleep, bank, drink, learn, exercise, relax, watch a game, buy medication, do business with the government, NGOs, Foreign Missions, and play in Sierra Leone.
+NPSL is a location-based local business review, directory, and citizen-generated open data platform for Africa. "NPSL Sierra Leone" is your local guide to finding the best places to eat, shop, sleep, bank, drink, learn, exercise, relax, watch a game, buy medication, do business with the government, NGOs, Foreign Missions, and play in Sierra Leone.
 
 Its free and easy to share your experience using five-star ratings, photos, and text comments. Your shared experience will help others like you make informed decisions. Your reviews will help the business owner improve service delivery
 

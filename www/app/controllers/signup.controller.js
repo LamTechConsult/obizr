@@ -1,4 +1,4 @@
-OBizR.controller('SignupCtrl',function ($scope,$state,smsService,$ionicPopup,$rootScope,UserResource, AuthenticationService, $localStorage) {
+NPSL.controller('SignupCtrl',function ($scope,$state,smsService,$ionicPopup,$rootScope,UserResource, AuthenticationService, $localStorage) {
   // jshint validthis: true
   //data for $scope.registerForm
   $scope.serverErrors = [];
@@ -19,7 +19,7 @@ OBizR.controller('SignupCtrl',function ($scope,$state,smsService,$ionicPopup,$ro
       $rootScope.otpData = {};
       $rootScope.otpData.user = $scope.user.name;
       $rootScope.otpData.password = $scope.user.pass;
-      $rootScope.otpData.msg = 'Thank You for Signing Up OBizR';
+      $rootScope.otpData.msg = 'Thank You for Signing Up NPSL';
       $rootScope.otpData.phonenumber = $scope.user.field_mobile_user_telephone.und[0].value;
 
       UserResource.register($scope.user).then(function (data) {
